@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_citas"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondozungu"
+    tools:context="com.samemoon.app.Citas_detalle">
+
+    <!--Comienza el contenedor padre-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/header"
+        android:layout_height="wrap_content">
+
+        <!--Comienza contenedor del header-->
+        <LinearLayout
+            android:background="@color/blanco"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:gravity="center"
+            android:layout_height="60dp">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_weight="0.20"
+                android:layout_height="match_parent"
+                android:onClick="goMenu">
+                <ImageView
+                    android:src="@drawable/menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_weight="0.60"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:src="@drawable/logo_zungu"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_weight="0.20"
+                android:onClick="goNotificaciones"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:src="@drawable/campanita"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnNotificaciones" />
+                <TextView
+                    android:gravity="center"
+                    android:id="@+id/numeroNotificaciones"
+                    android:text=""
+                    android:visibility="gone"
+                    android:background="@drawable/fondo_notificacion"
+                    android:textColor="@color/blanco"
+                    android:textSize="@dimen/texto_notificaciones"
+                    android:layout_marginLeft="@dimen/notificaciones_margin_left"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="@dimen/notificaciones_margin_top"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:weightSum="1"
+            android:id="@+id/header_verde"
+            android:background="@color/verde_zungu"
+            android:layout_height="40dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="0.10"
+                android:gravity="center"
+                android:layout_height="match_parent"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="0.80"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:src="@drawable/citas"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="Agenda"
+                    android:gravity="center"
+                    android:textColor="@color/blanco"
+                    android:textSize="15dp"
+                    android:paddingLeft="10dp"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="0.10"
+                android:gravity="center"
+                android:layout_height="match_parent">
+            </LinearLayout>
+        </LinearLayout>
+        <!--Termina contenedor del header-->
+
+
+        <!--Contenido Hijo-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="1"
+                android:gravity="center"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight=".90"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:weightSum="1"
+                            android:layout_marginTop="10dp"
+                            android:gravity="left"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:text="Detalle Cita"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentStart="true"
+                                android:id="@+id/txtFechaDetalle"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:weightSum="1"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:gravity="left"
+                                android:layout_weight="0.50"
+                                android:layout_height="match_parent">
+                                <TextView
+                                    android:text="Nombre del cliente"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/textView8" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:gravity="right"
+                                android:layout_weight="0.50"
+                                android:layout_height="match_parent">
+                                <TextView
+                                    android:text="Fecha y hora solicitada"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/textView9" />
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:weightSum="1"
+                            android:layout_marginTop="0dp"
+                            android:gravity="center"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:gravity="left"
+                                android:layout_weight="0.50"
+                                android:layout_height="match_parent">
+                                <TextView
+                                    android:text="Nombre"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentStart="true"
+                                    android:id="@+id/txtNombre" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:gravity="right"
+                                android:layout_weight="0.50"
+                                android:layout_height="match_parent">
+                                <TextView
+                                    android:text="Fecha"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/txtFecha"  />
+                            </LinearLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:weightSum="1"
+                            android:layout_marginTop="0dp"
+                            android:gravity="center"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:gravity="left"
+                                android:layout_weight="0.50"
+                                android:layout_height="match_parent">
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:gravity="right"
+                                android:layout_weight="0.50"
+                                android:layout_height="match_parent">
+                                <TextView
+                                    android:text="Hora"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/txtHora" />
+                            </LinearLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:weightSum="1"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:gravity="center"
+                                android:layout_weight="1"
+                                android:layout_height="match_parent">
+                                <ImageView
+                                    android:layout_width="120dp"
+                                    android:layout_height="100dp"
+                                    app:srcCompat="@drawable/circle_image"
+                                    android:id="@+id/imgPerfil" />
+                            </LinearLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:weightSum="1"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:gravity="left"
+                                android:layout_weight="0.15"
+                                android:layout_height="match_parent">
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:gravity="left"
+                                android:layout_weight="0.10"
+                                android:layout_height="match_parent">
+                                <ImageView
+                                    android:layout_width="15dp"
+                                    android:layout_height="15dp"
+                                    app:srcCompat="@drawable/mail"
+                                    android:id="@+id/imageView2" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:gravity="left"
+                                android:layout_weight="0.60"
+                                android:layout_height="match_parent">
+                                <TextView
+                                    android:text="Correo"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/txtCorreo" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:gravity="left"
+                                android:layout_weight="0.15"
+                                android:layout_height="match_parent">
+
+                            </LinearLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:weightSum="1"
+                            android:layout_marginTop="0dp"
+                            android:gravity="center"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:gravity="left"
+                                android:layout_weight="0.15"
+                                android:layout_height="match_parent">
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:gravity="left"
+                                android:layout_weight="0.10"
+                                android:layout_height="match_parent">
+                                <ImageView
+                                    android:layout_width="15dp"
+                                    android:layout_height="15dp"
+                                    app:srcCompat="@drawable/celular"
+                                    android:id="@+id/imageView3" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:gravity="left"
+                                android:layout_weight="0.60"
+                                android:layout_height="match_parent">
+                                <TextView
+                                    android:text="Telefono"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/txtTelefono" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:gravity="left"
+                                android:layout_weight="0.15"
+                                android:layout_height="match_parent">
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:weightSum="1"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:gravity="left"
+                                android:layout_weight=".35"
+                                android:layout_height="match_parent">
+                                <TextView
+                                    android:text="Motivo de cita:"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:gravity="left"
+                                android:layout_weight=".65"
+                                android:layout_height="match_parent">
+                                <TextView
+                                    android:text="Motivo de cita"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/txtMotivo" />
+                            </LinearLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:weightSum="1"
+                            android:layout_marginTop="0dp"
+                            android:gravity="center"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:gravity="left"
+                                android:layout_weight=".35"
+                                android:layout_height="match_parent">
+                                <TextView
+                                    android:text="Forma de pago:"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:gravity="left"
+                                android:layout_weight=".65"
+                                android:layout_height="match_parent">
+                                <TextView
+                                    android:text="Forma de pago"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/txtFormaPago" />
+                            </LinearLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:weightSum="1"
+                            android:layout_marginTop="0dp"
+                            android:gravity="center"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:gravity="left"
+                                android:layout_weight=".35"
+                                android:layout_height="match_parent">
+                                <TextView
+                                    android:text="Estatus de pago:"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:gravity="left"
+                                android:layout_weight=".65"
+                                android:layout_height="match_parent">
+                                <TextView
+                                    android:text="Pagado"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/txtStatus" />
+                            </LinearLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:weightSum="1"
+                            android:layout_marginTop="20dp"
+                            android:gravity="center"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:gravity="left"
+                                android:layout_weight=".10"
+                                android:layout_height="match_parent">
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:gravity="center"
+                                android:layout_weight=".30"
+                                android:id="@+id/btnReagendar"
+                                android:layout_height="match_parent">
+                                <Button
+                                    android:layout_width="90dp"
+                                    android:layout_height="30dp"
+                                    android:text="Reagendar"
+                                    android:textSize="13dp"
+                                    android:background="@color/gris_fuerte"
+                                    android:textColor="@color/blanco"
+                                    android:onClick="reagendarCita" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:gravity="center"
+                                android:layout_weight=".30"
+                                android:layout_height="match_parent"
+                                android:id="@+id/btnOk">
+                                <Button
+                                    android:layout_width="90dp"
+                                    android:layout_height="30dp"
+                                    android:text="Aceptar"
+                                    android:textSize="13dp"
+                                    android:background="@color/btn_email"
+                                    android:textColor="@color/blanco"
+                                    android:onClick="aceptarCita" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:gravity="center"
+                                android:layout_weight=".10"
+                                android:layout_height="match_parent">
+
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+
+        <!--Termina Contenido Hijo-->
+    </LinearLayout>
+
+
+
+    <!--Termina contenedor padre-->
+</RelativeLayout>

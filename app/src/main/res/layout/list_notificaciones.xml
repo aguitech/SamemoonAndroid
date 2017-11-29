@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="4dp"
+        android:layout_height="50dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.20"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:src="@drawable/icon"
+                android:layout_height="match_parent"
+                android:id="@+id/imagenNotificacion" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.60"
+            android:paddingLeft="5dp"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent"
+                android:text="El cliente “Juan” canceló la cita de “su mascota” programada el 01/01/2016."
+                android:textStyle="bold"
+                android:textColor="@color/gris_fuerte"
+                android:textSize="12dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/contenidoNotificacion" />
+            <TextView
+                android:layout_width="match_parent"
+                android:text="Hace 2 h."
+                android:textStyle="bold"
+                android:textColor="@color/amarillo"
+                android:textSize="12dp"
+                android:id="@+id/fechaNotificacion"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.20"
+            android:paddingLeft="5dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="20dp"
+                android:src="@drawable/borrar_panel"
+                android:layout_height="wrap_content"
+                android:id="@+id/imgEliminar" />
+        </LinearLayout>
+
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,158 @@
+<resources>
+    <string name="app_name">SameMoon</string>
+    <string name="app_title">SameMoon</string>
+    <string name="intro_uno">Encuentra el mejor veterinario para el cuidado de tu mascota</string>
+    <string name="intro_dos">Adopta aun amigo y cuida de él ubica la mascota ideal para ti</string>
+    <string name="intro_tres">Administra el perfil de tu mascota y compártelo con familiares y amigos</string>
+    <string name="login_leyenda">Al registrarte estás aceptando nuestros términos y políticas de privacidad</string>
+    <string name="popup_registro">Necesitas tener una cuenta para hacer esta acción</string>
+    <string name="formaspago">Escoge la forma de pago \n de tu preferencia:</string>
+    <string name="sin_examen_medico">Tu mascota aún no tiene un exámen médico</string>
+    <string name="date_button_set">Selecciona la fecha de tu cita</string>
+    <string name="error_validacion">Todos los campos son necesarios.</string>
+    <string name="legales">Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las
+industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los
+mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de
+relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas
+"Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus
+PageMaker, el cual incluye versiones de Lorem Ipsum.</string>
+    <string name="facebook_app_id">411222715934467</string>
+
+    <string name="title_activity_welcome">Home Screen</string>
+    <string name="next">SIGUIENTE</string>
+    <string name="skip">OMITIR</string>
+    <string name="start">LISTO</string>
+
+    <string name="slide_1_title">Crea un evento</string>
+    <string name="slide_1_desc">Ingresa la fecha y hora del evento</string>
+
+    <string name="slide_2_title">Invita a tus amigos</string>
+    <string name="slide_2_desc">Seleecciona de tus amigos los invitados</string>
+
+    <string name="slide_3_title">Tomate la foto en el evento</string>
+    <string name="slide_3_desc">Toma la foto para poder generar el collage</string>
+
+    <string name="slide_4_title">Visita tus monnies</string>
+    <string name="slide_4_desc">Recuerda tus momentos guardados</string>
+
+    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
+    <string name="play_again">Play Again</string>
+    <!--
+    <string name="slide_1_title">Elige el cliente</string>
+    <string name="slide_1_desc">Selecciona un cliente para agregar un pago</string>
+
+    <string name="slide_2_title">Agrega el pago</string>
+    <string name="slide_2_desc">Indica la cantidad por la cual se realizará el pago</string>
+
+    <string name="slide_3_title">Confirma el pago</string>
+    <string name="slide_3_desc">Revisa la cantidad de pago, acepta o declina</string>
+
+    <string name="slide_4_title">Imprime</string>
+    <string name="slide_4_desc">Y por último imprime el recibo de pago</string>
+
+    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
+    <string name="play_again">Play Again</string>
+
+
+    <string name="title_activity_welcome">Home Screen</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+    <string name="slide_1_title">Hello Food!</string>
+    <string name="slide_1_desc">The easiest way to order food from your favourite restaurant!</string>
+
+    <string name="slide_2_title">Movie Tickets</string>
+    <string name="slide_2_desc">Book movie tickets for your family and friends!</string>
+
+    <string name="slide_3_title">Great Discounts</string>
+    <string name="slide_3_desc">Best discounts on every single service we offer!</string>
+
+    <string name="slide_4_title">World Travel</string>
+    <string name="slide_4_desc">Book tickets of any transportation and travel the world!</string>
+
+    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
+    <string name="play_again">Play Again</string>
+    -->
+    <string-array name="DEMO_APPS">
+        <item>Connectivity</item>
+        <item>Discovery</item>
+        <item>Image Print</item>
+        <item>List Formats</item>
+        <item>Mag Card</item>
+        <item>Printer Status</item>
+        <item>Smart Card</item>
+        <item>Signature Capture</item>
+        <item>Send File</item>
+        <item>Stored Format</item>
+        <item>Status Channel</item>
+        <item>Connection Builder</item>
+        <item>Receipt</item>
+        <item>Multichannel</item>
+    </string-array>
+    <string-array name="DISCODEMO_DISCO_METHODS">
+        <item>Bluetooth</item>
+        <item>Local Broadcast</item>
+        <item>Directed Broadcast</item>
+        <item>Multicast</item>
+        <item>Subnet Search</item>
+        <item>Find printers near me</item>
+    </string-array>
+
+    <color name="Red">#FF0000</color>
+
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+
+
+
+    <!--main_activity-->
+    <string name="connect">Search for and connect a Bluetooth printer</string>
+    <string name="txt_content">&quot;&quot;</string>
+    <string name="choose_paper_width">Paper width:</string>
+    <string name="width1">58mm</string>
+    <string name="width2">80mm</string>
+    <string name="printhex">HEX</string>
+    <string name="btnSend">Send Data</string>
+    <string name="btn_test">Print Test</string>
+    <string name="btn_prtbmp">Print Picture</string>
+    <string name="printpicture">Graphical Print</string>
+    <string name="chosecommand">Please select instruction</string>
+    <string name="btnClose">Close</string>
+    <string name="contentdescription"></string>
+    <string name="btn_prttable">Print Form</string>
+    <string name="Smallticketprinting">Small Ticket Printing</string>
+    <string name="btn_prtcode">Print 1D/2D Codebar</string>
+    <string name="btn_scqr">Generate QR Code Print</string>
+    <string name="btn_dyca">Turn on the camera</string>
+    <string name="input">Please enter a print!</string>
+    <string name="choose_printcoding"></string>
+    <string name="big5">BIG5</string>
+    <string name="thai">Thai</string>
+    <string name="kor">Korean</string>
+    <string name="gbk12">Simplified</string>
+
+    <!--  DeviceListActivity -->
+    <string name="scanning">Scanning Device&#8230;</string>
+    <string name="select_device">Select the connected device</string>
+    <string name="none_paired">No matching devices</string>
+    <string name="none_found">No device found</string>
+    <string name="title_paired_devices">Match equipment</string>
+    <string name="title_other_devices">Other useful equipment</string>
+    <string name="button_scan">Scanning device</string>
+
+    <!--  Message -->
+    <string name="msg_state">Input Error!</string>
+    <string name="empty1">Input is empty, in the text box to enter the content to be converted &#8230;</string>
+    <string name="empty">Input is empty</string>
+    <string name="not_connected">Please connect a Bluetooth printer</string>
+    <string name="bt_not_enabled_leaving">Bluetooth does not start, quit the program</string>
+    <string name="title_connecting">connecting…</string>
+    <string name="title_connected_to">connected: </string>
+    <string name="title_not_connected">Is not connected</string>
+    <string name="Connecting">It is connected to a Bluetooth printer</string>
+    <string name="msg_statev1">Without a picture</string>
+    <string name="strLang">en</string>
+    <string name="camer">No pictures</string>
+    <string name="msg_error">Input errors, please check!</string>
+</resources>

@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_mascotas"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo"
+    tools:context="init_code.hyperion.zunguveterinarios.Agregar_cita">
+
+    <!--Comienza el contenedor padre-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        android:id="@+id/contenedor">
+
+        <!--Comienza contenedor del header-->
+        <LinearLayout
+            android:background="@color/blanco"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:gravity="center"
+            android:layout_height="60dp">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_weight="0.20"
+                android:onClick="goMenu"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:src="@drawable/menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_weight="0.60"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:src="@drawable/logo_zungu"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_weight="0.20"
+                android:onClick="goNotificaciones"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:src="@drawable/campanita"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnNotificaciones" />
+                <TextView
+                    android:gravity="center"
+                    android:id="@+id/numeroNotificaciones"
+                    android:text=""
+                    android:visibility="gone"
+                    android:background="@drawable/fondo_notificacion"
+                    android:textColor="@color/blanco"
+                    android:textSize="@dimen/texto_notificaciones"
+                    android:layout_marginLeft="@dimen/notificaciones_margin_left"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="@dimen/notificaciones_margin_top"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:weightSum="1"
+            android:background="@color/verde_zungu"
+            android:layout_height="40dp">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="0.10"
+                android:gravity="center"
+                android:layout_height="match_parent"></LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="0.80"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:src="@drawable/citas"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="Agenda"
+                    android:gravity="center"
+                    android:textColor="@color/blanco"
+                    android:textSize="15dp"
+                    android:paddingLeft="10dp"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="0.10"
+                android:gravity="center"
+                android:layout_height="match_parent">
+            </LinearLayout>
+        </LinearLayout>
+        <!--Termina contenedor del header-->
+
+
+        <!--Contenido Hijo-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:focusableInTouchMode="true"
+            android:layout_marginTop="15dp"
+            android:weightSum="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="0.90"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:hint="EDITAR CITA"
+                    android:textSize="15dp"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+        <!--Termina Buscador-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:weightSum="1"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="0.90"
+                android:background="@color/verde_zungu"
+                android:layout_height="1dp">
+            </LinearLayout>
+        </LinearLayout>
+        <!--Termina Separador-->
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:paddingBottom="10dp"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:weightSum="1"
+                        android:id="@+id/_selperf"
+                        android:layout_marginTop="15dp"
+                        android:gravity="center"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="0.81"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <Button
+                                android:layout_width="match_parent"
+                                android:text="Cliente"
+                                android:onClick="showClientList"
+                                android:gravity="left|center"
+                                android:paddingLeft="20dp"
+                                android:textAllCaps="false"
+                                android:textSize="12dp"
+                                android:background="@drawable/border_negro_radius"
+                                android:layout_height="30dp"
+                                android:id="@+id/btnCliente" />
+                            <Button
+                                android:layout_width="match_parent"
+                                android:text="Mascota"
+                                android:onClick="showMascotaList"
+                                android:gravity="left|center"
+                                android:paddingLeft="20dp"
+                                android:layout_marginTop="5dp"
+                                android:textAllCaps="false"
+                                android:textSize="12dp"
+                                android:background="@drawable/border_negro_radius"
+                                android:layout_height="30dp"
+                                android:id="@+id/btnMascota" />
+                            <Button
+                                android:layout_width="match_parent"
+                                android:text="Servicio"
+                                android:onClick="showServicioList"
+                                android:gravity="left|center"
+                                android:paddingLeft="20dp"
+                                android:layout_marginTop="5dp"
+                                android:textAllCaps="false"
+                                android:textSize="12dp"
+                                android:background="@drawable/border_negro_radius"
+                                android:layout_height="30dp"
+                                android:id="@+id/btnServicio" />
+                            <Button
+                                android:layout_width="match_parent"
+                                android:text="Veterinario"
+                                android:onClick="showVeterinarioList"
+                                android:gravity="left|center"
+                                android:paddingLeft="20dp"
+                                android:layout_marginTop="5dp"
+                                android:textAllCaps="false"
+                                android:textSize="12dp"
+                                android:background="@drawable/border_negro_radius"
+                                android:layout_height="30dp"
+                                android:id="@+id/btnVeterinario" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!--
+                    <LinearLayout
+                        android:layout_below="@+id/tx_selecciona"
+                        android:id="@+id/_selperf"
+                        android:weightSum="1"
+                        android:onClick="showPerfilList"
+                        android:gravity="center"
+                        android:background="@color/fondo_input"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:layout_height="40dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtPerfil"
+                            android:text="Tipo de perfil"
+                            android:textColor="@color/blanco"
+                            android:paddingLeft="20dp"
+                            android:paddingTop="8dp"
+                            android:textSize="18dp"
+                            android:layout_weight="0.80"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:paddingRight="12dp"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/down"/>
+                    </LinearLayout>
+                    -->
+
+                    <!--
+                     <LinearLayout
+                         android:layout_width="match_parent"
+                         android:weightSum="1"
+                         android:layout_marginTop="15dp"
+                         android:gravity="center"
+                         android:layout_height="wrap_content">
+                         <LinearLayout
+                             android:layout_width="0dp"
+                             android:layout_weight="0.81"
+                             android:layout_height="wrap_content">
+
+                             <TextView
+                                 android:id="@+id/txtPerfil"
+                                 android:text="Tipo de perfil"
+                                 android:textColor="@color/blanco"
+                                 android:paddingLeft="20dp"
+                                 android:paddingTop="8dp"
+                                 android:textSize="18dp"
+                                 android:layout_weight="0.74"
+                                 android:layout_width="match_parent"
+                                 android:layout_height="wrap_content" />
+
+                             <ImageView
+                                 android:layout_width="wrap_content"
+                                 android:paddingRight="12dp"
+                                 android:layout_height="match_parent"
+                                 android:src="@drawable/down"/>
+                         </LinearLayout>
+                     </LinearLayout>
+ -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:weightSum="1"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="0.40"
+                            android:layout_marginRight="5dp"
+                            android:layout_height="wrap_content">
+                            <Button
+                                android:layout_width="match_parent"
+                                android:text="Mes/Día"
+                                android:gravity="center"
+                                android:textAllCaps="false"
+                                android:textSize="12dp"
+                                android:background="@drawable/border_negro_radius"
+                                android:layout_height="30dp"
+                                android:id="@+id/btnMesDia" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="0.40"
+                            android:layout_marginLeft="5dp"
+                            android:layout_height="wrap_content">
+                            <Button
+                                android:layout_width="match_parent"
+                                android:text="Horario disponible"
+                                android:gravity="center"
+                                android:textAllCaps="false"
+                                android:textSize="12dp"
+                                android:background="@drawable/border_negro_radius"
+                                android:layout_height="30dp"
+                                android:id="@+id/btnHora" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:weightSum="1"
+                        android:gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="0.80"
+                            android:background="@color/verde_zungu"
+                            android:layout_height="1dp">
+                        </LinearLayout>
+                    </LinearLayout>
+                    <!--Termina Separador-->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:weightSum="1"
+                        android:gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="0.80"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:text="Nota"
+                                android:gravity="center"
+                                android:textStyle="bold"
+                                android:textSize="15dp"
+                                android:textColor="@color/gris_fuerte"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <!--Termina Separador-->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:weightSum="1"
+                        android:gravity="center"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:orientation="vertical"
+                            android:layout_weight="0.90"
+                            android:layout_height="wrap_content">
+                            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                                android:layout_width="fill_parent"
+                                android:weightSum="1"
+                                android:visibility="gone"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <RadioButton android:id="@+id/revicion"
+                                    android:layout_width="wrap_content"
+                                    android:textColor="@color/gris_fuerte"
+                                    android:textSize="12dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Revisión Mensual"
+                                    />
+
+                                <RadioButton android:id="@+id/sevicio"
+                                    android:layout_width="wrap_content"
+                                    android:textSize="12dp"
+                                    android:textColor="@color/gris_fuerte"
+                                    android:layout_height="wrap_content"
+                                    android:text="Servicio de Estética"
+                                    />
+
+                                <RadioButton android:id="@+id/vacunacion"
+                                    android:layout_width="wrap_content"
+                                    android:textSize="12dp"
+                                    android:textColor="@color/gris_fuerte"
+                                    android:layout_height="wrap_content"
+                                    android:text="Vacunación"
+                                    />
+
+                                <RadioButton android:id="@+id/cirugia"
+                                    android:layout_width="wrap_content"
+                                    android:textSize="12dp"
+                                    android:textColor="@color/gris_fuerte"
+                                    android:layout_height="wrap_content"
+                                    android:text="Cirugía mayor"
+                                    />
+
+                                <RadioButton android:id="@+id/otro"
+                                    android:layout_width="wrap_content"
+                                    android:textSize="12dp"
+                                    android:textColor="@color/gris_fuerte"
+                                    android:layout_height="wrap_content"
+                                    android:text="Otro"
+                                    />
+                            </RadioGroup>
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_marginRight="10dp"
+                                android:paddingLeft="10dp"
+                                android:layout_marginTop="10dp"
+                                android:inputType="textCapSentences"
+                                android:textSize="13dp"
+                                android:hint="Nota"
+                                android:layout_marginLeft="10dp"
+                                android:background="@drawable/border_negro_radius"
+                                android:layout_height="30dp"
+                                android:id="@+id/txtMotivoCita" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </RelativeLayout>
+        </ScrollView>
+
+        <!--Termina Contenido Hijo-->
+    </LinearLayout>
+    <!--Termina contenedor padre-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:weightSum="1"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearBotones"
+        android:layout_below="@id/contenedor">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.35"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_width="match_parent"
+                android:text="Cancelar"
+                android:textColor="@color/gris_fuerte"
+                android:textAllCaps="false"
+                android:onClick="goCitas"
+                android:textSize="12dp"
+                android:background="@drawable/border_verde_radius"
+                android:layout_height="30dp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="0.35"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_width="match_parent"
+                android:text="Confirmar"
+                android:textAllCaps="false"
+                android:onClick="confirmar"
+                android:textColor="@color/blanco"
+                android:background="@drawable/btn_verde_radius"
+                android:layout_height="30dp"
+                android:textSize="12dp"
+                android:id="@+id/btnGuardar" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

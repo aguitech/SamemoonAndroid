@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_citas"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondozungu"
+    tools:context="init_code.hyperion.zunguveterinarios.Citas">
+
+    <!--Comienza el contenedor padre-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/header"
+        android:layout_height="wrap_content">
+
+        <!--Comienza contenedor del header-->
+        <LinearLayout
+            android:background="@color/blanco"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:gravity="center"
+            android:layout_height="60dp">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_weight="0.20"
+                android:layout_height="match_parent"
+                android:onClick="goMenu">
+                <ImageView
+                    android:src="@drawable/menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_weight="0.60"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:src="@drawable/logo_zungu"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_weight="0.20"
+                android:onClick="goNotificaciones"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:src="@drawable/campanita"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnNotificaciones" />
+                <TextView
+                    android:gravity="center"
+                    android:id="@+id/numeroNotificaciones"
+                    android:text=""
+                    android:visibility="gone"
+                    android:background="@drawable/fondo_notificacion"
+                    android:textColor="@color/blanco"
+                    android:textSize="@dimen/texto_notificaciones"
+                    android:layout_marginLeft="@dimen/notificaciones_margin_left"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="@dimen/notificaciones_margin_top"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:weightSum="1"
+            android:background="@color/verde_zungu"
+            android:layout_height="40dp">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="0.10"
+                android:gravity="center"
+                android:layout_height="match_parent"></LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="0.80"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:src="@drawable/citas"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="Agenda"
+                    android:gravity="center"
+                    android:textColor="@color/blanco"
+                    android:textSize="15dp"
+                    android:paddingLeft="10dp"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="0.10"
+                android:gravity="center"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="+"
+                    android:id="@+id/btnAgregarCita"
+                    android:textColor="@color/blanco"
+                    android:textAlignment="center"
+                    android:textSize="30dp"
+                    android:onClick="goAgregar"/>
+            </LinearLayout>
+        </LinearLayout>
+        <!--Termina contenedor del header-->
+
+
+        <!--Contenido Hijo-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:weightSum="1"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:layout_height="30dp">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="0.40"
+                android:gravity="center"
+                android:layout_height="match_parent">
+                <Button
+                    android:layout_width="match_parent"
+                    android:text="Hoy"
+                    android:textSize="12dp"
+                    android:textColor="@color/blanco"
+                    android:background="@drawable/tab_negro"
+                    android:textAllCaps="false"
+                    android:layout_height="match_parent"
+                    android:id="@+id/btnFechaValor" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="0.40"
+                android:gravity="center"
+                android:layout_height="match_parent">
+                <Button
+                    android:layout_width="match_parent"
+                    android:text="Solicitudes"
+                    android:textSize="12dp"
+                    android:onClick="goSolicitudes"
+                    android:textColor="@color/obscuro"
+                    android:background="@drawable/tab_border_obscuro"
+                    android:textAllCaps="false"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:weightSum="1"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="0.90"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_height="wrap_content">
+                <!-- FECHA -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/verde_zungu"
+                    android:textStyle="bold"
+                    android:textSize="15dp"
+                    android:text=""
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:weightSum="1"
+            android:layout_marginTop="2dp"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight=".90"
+                android:background="@color/verde_zungu"
+                android:layout_height="1dp"></LinearLayout>
+        </LinearLayout>
+        <!--Termina Separador-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:weightSum="1"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="0.90"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:weightSum="1"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.20"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:text="Horario"
+                            android:textColor="@color/gris_fuerte"
+                            android:textSize="10dp"
+                            android:gravity="center|left"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.40"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:text="Nombre cliente"
+                            android:textColor="@color/gris_fuerte"
+                            android:textSize="10dp"
+                            android:gravity="center|left"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.40"
+                        android:layout_height="wrap_content">
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:weightSum="1"
+            android:layout_marginTop="2dp"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight=".90"
+                android:background="@color/verde_zungu"
+                android:layout_height="1dp"></LinearLayout>
+        </LinearLayout>
+
+        <!--Termina Contenido Hijo-->
+    </LinearLayout>
+    <!--Termina contenedor padre-->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_above="@+id/btn_cita"
+        android:layout_below="@+id/header"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="10dp"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:weightSum="1"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.90"
+                        android:layout_height="wrap_content">
+                        <ListView
+                            android:id="@+id/list_cita"
+                            android:layout_width="match_parent"
+                            android:layout_height="258dp"></ListView>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_above="@+id/btn_calendario"
+        android:id="@+id/btn_cita"
+        android:layout_width="match_parent"
+        android:weightSum="1"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.40"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_width="match_parent"
+                android:background="@android:color/transparent"
+                android:textColor="@color/gris_claro"
+                android:text="+ Agregar cita"
+                android:textSize="12dp"
+                android:onClick="goAgregar"
+                android:textAllCaps="false"
+                android:layout_height="25dp"
+                android:visibility="gone"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:id="@+id/btn_calendario"
+        android:layout_width="match_parent"
+        android:weightSum="1"
+        android:gravity="center"
+        android:layout_marginBottom="20dp"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.40"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_width="match_parent"
+                android:background="@drawable/border_verde_radius"
+                android:textColor="@color/obscuro"
+                android:text="Ver calendario"
+                android:onClick="goCalendario"
+                android:textSize="12dp"
+                android:textAllCaps="false"
+                android:layout_height="25dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
