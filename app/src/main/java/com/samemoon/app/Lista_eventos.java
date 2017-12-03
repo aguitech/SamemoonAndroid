@@ -112,6 +112,11 @@ public class Lista_eventos extends AppCompatActivity {
         Intent i = new Intent(Lista_eventos.this, Menu.class);
         startActivity(i);
     }
+
+    public void agregarEvento(View v){
+        Intent i = new Intent(Lista_eventos.this, Agregar_evento.class);
+        startActivity(i);
+    }
     /*
     public void goMenu(View v){
         Intent i = new Intent(Lista_veterinarios.this, Menu.class);

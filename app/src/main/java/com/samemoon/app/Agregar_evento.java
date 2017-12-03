@@ -321,6 +321,13 @@ public class Agregar_evento extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void agregarEvento(View v){
+        /*
+        Intent i = new Intent(Lista_eventos.this, Agregar_evento.class);
+        startActivity(i);
+        */
+    }
+
     public void changeDate(View v){
 
     }
@@ -338,10 +345,13 @@ public class Agregar_evento extends AppCompatActivity {
         Button btnCliente = (Button) findViewById(R.id.btnCliente);
 
 
-        showMsg(btnMesDia.getText());
+        //showMsg(btnMesDia.getText());
+
         //showMsg(btnHora.getText());
         //showMsg(btnCliente.getText());
 
+
+        /*DESCOMENTAR
         //_url = "http://aguitech.com/samemoon/cobradores/ios_agregar_evento.php?id_usuario=" + Integer.toString(selCliente) + "&idvh=" + Integer.toString(selVeterinario) + "&id_servicio=" + Integer.toString(selServicio) + "&motivo="+ URLEncoder.encode(txtMotivoCita.getText().toString()) + "&fecha=" + URLEncoder.encode(btnMesDia.getText().toString()) + "&hora=" + URLEncoder.encode(btnHora.getText().toString()) + "&id_veterinario=" + String.valueOf(valueID) + "&id_mascota=" + Integer.toString(selMascota);
         _url = "http://aguitech.com/samemoon/cobradores/ios_agregar_evento.php?evento="+ URLEncoder.encode(txtMotivoCita.getText().toString()) + "&fecha=" + URLEncoder.encode(btnMesDia.getText().toString()) + "&hora=" + URLEncoder.encode(btnHora.getText().toString()) + "&id_usuario=" + String.valueOf(valueID);
         //new Agregar_evento.RetrieveFeedTask().execute();
@@ -349,8 +359,22 @@ public class Agregar_evento extends AppCompatActivity {
         btnGuardar.setEnabled(false);
         new Agregar_evento.RetrieveFeedTask().execute();
 
+        */
+
+
+        if(txtMotivoCita.getText().toString().length() < 1 || btnHora.getText().toString().equals("Horario disponible") || btnMesDia.getText().toString().equals("Mes/Día")){
+            showMsg("Todos los campos son necesarios.");
+        } else {
+
+
+            //_url = "http://hyperion.init-code.com/zungu/app/vt_agregar_cita.php?id_usuario=" + Integer.toString(selCliente) + "&idvh=" + Integer.toString(selVeterinario) + "&id_servicio=" + Integer.toString(selServicio) + "&motivo="+ URLEncoder.encode(txtMotivoCita.getText().toString()) + "&fecha=" + URLEncoder.encode(btnMesDia.getText().toString()) + "&hora=" + URLEncoder.encode(btnHora.getText().toString()) + "&id_veterinario=" + String.valueOf(valueID) + "&id_mascota=" + Integer.toString(selMascota);
+            _url = "http://aguitech.com/samemoon/cobradores/ios_agregar_evento.php?evento="+ URLEncoder.encode(txtMotivoCita.getText().toString()) + "&fecha=" + URLEncoder.encode(btnMesDia.getText().toString()) + "&hora=" + URLEncoder.encode(btnHora.getText().toString()) + "&id_usuario=" + String.valueOf(valueID);
+            btnGuardar.setEnabled(false);
+            new Agregar_evento.RetrieveFeedTask().execute();
+        }
         /*
         DESCOMENTAR
+
 
         if(txtMotivoCita.getText().toString().length() < 1 || selVeterinario == 0 || selServicio == 0 || selCliente == 0 || btnHora.getText().toString().equals("Horario disponible") || btnMesDia.getText().toString().equals("Mes/Día")){
             showMsg("Todos los campos son necesarios.");
@@ -410,7 +434,8 @@ public class Agregar_evento extends AppCompatActivity {
 
                 try {
                     JSONObject object = (JSONObject) new JSONTokener(response).nextValue();
-                    int ID = object.getInt("id_cita");
+                    int ID = object.getInt("id_evento");
+                    //int ID = object.getInt("id_cita");
                     //String NOMBRE = object.getString("nombre");
                     //CharSequence text;
 
@@ -427,7 +452,8 @@ public class Agregar_evento extends AppCompatActivity {
                         Intent i = new Intent(Agregar_evento.this, Lista_eventos.class);
                         startActivity(i);
 
-                        showMsg("Se ha agendado la cita");
+                        //showMsg("Se ha agendado la cita");
+                        showMsg("Se ha agendado el evento");
                     }
 
                 } catch (JSONException e) {

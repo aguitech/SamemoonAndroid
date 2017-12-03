@@ -446,4 +446,26 @@
         </LinearLayout>
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:weightSum="1"
+        android:gravity="bottom"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.32"
+            android:layout_height="wrap_content">
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.36"
+            android:layout_height="wrap_content"
+            android:onClick="confirmar">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/btn_listo"/>
+        </LinearLayout>
+    </LinearLayout>
 </RelativeLayout>
