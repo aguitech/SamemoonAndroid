@@ -4,9 +4,9 @@
     android:id="@+id/activity_mascotas"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo"
+    android:background="@color/blanco"
     tools:context="com.samemoon.app.Agregar_evento">
-
+<!--android:background="@drawable/fondo"-->
     <!--Comienza el contenedor padre-->
     <LinearLayout
         android:layout_width="match_parent"
@@ -39,8 +39,8 @@
                 android:layout_weight="0.60"
                 android:layout_height="match_parent">
                 <ImageView
-                    android:src="@drawable/titulo_samemoon"
-                    android:layout_width="100dp"
+                    android:src="@drawable/titulo_programar_monnie"
+                    android:layout_width="160dp"
                     android:layout_height="match_parent" />
             </LinearLayout>
             <LinearLayout
@@ -68,6 +68,7 @@
                     android:layout_height="wrap_content" />
             </LinearLayout>
         </LinearLayout>
+        <!--
         <LinearLayout
             android:layout_width="match_parent"
             android:weightSum="1"
@@ -104,10 +105,12 @@
                 android:layout_height="match_parent">
             </LinearLayout>
         </LinearLayout>
+        -->
         <!--Termina contenedor del header-->
 
 
         <!--Contenido Hijo-->
+        <!--
         <LinearLayout
             android:layout_width="match_parent"
             android:focusableInTouchMode="true"
@@ -128,6 +131,7 @@
                     />
             </LinearLayout>
         </LinearLayout>
+        -->
         <!--Termina Buscador-->
 
         <LinearLayout
@@ -138,7 +142,7 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_weight="0.90"
-                android:background="@color/verde_zungu"
+                android:background="@color/negro"
                 android:layout_height="1dp">
             </LinearLayout>
         </LinearLayout>
@@ -238,75 +242,23 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:weightSum="1"
-                        android:layout_marginTop="5dp"
-                        android:gravity="center"
-                        android:layout_height="wrap_content">
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_weight="0.40"
-                            android:layout_marginRight="5dp"
-                            android:layout_height="wrap_content">
-                            <Button
-                                android:layout_width="match_parent"
-                                android:text="Mes/Día"
-                                android:gravity="center"
-                                android:textAllCaps="false"
-                                android:textSize="12dp"
-                                android:background="@drawable/border_negro_radius"
-                                android:layout_height="30dp"
-                                android:id="@+id/btnMesDia" />
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_weight="0.40"
-                            android:layout_marginLeft="5dp"
-                            android:layout_height="wrap_content">
-                            <Button
-                                android:layout_width="match_parent"
-                                android:text="Horario disponible"
-                                android:gravity="center"
-                                android:textAllCaps="false"
-                                android:textSize="12dp"
-                                android:background="@drawable/border_negro_radius"
-                                android:layout_height="30dp"
-                                android:id="@+id/btnHora" />
-                        </LinearLayout>
-                    </LinearLayout>
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:weightSum="1"
                         android:gravity="center"
                         android:layout_marginTop="10dp"
                         android:layout_height="wrap_content">
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_weight="0.80"
-                            android:background="@color/verde_zungu"
-                            android:layout_height="1dp">
-                        </LinearLayout>
-                    </LinearLayout>
-                    <!--Termina Separador-->
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:weightSum="1"
-                        android:gravity="center"
-                        android:layout_marginTop="10dp"
-                        android:layout_height="wrap_content">
                         <LinearLayout
                             android:layout_width="0dp"
-                            android:layout_weight="0.80"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.80">
+
                             <TextView
                                 android:layout_width="match_parent"
-                                android:text="Nota"
+                                android:layout_height="match_parent"
                                 android:gravity="center"
-                                android:textStyle="bold"
-                                android:textSize="15dp"
+                                android:text="Titulo del evento"
                                 android:textColor="@color/gris_fuerte"
-                                android:layout_height="wrap_content" />
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
                         </LinearLayout>
                     </LinearLayout>
                     <!--Termina Separador-->
@@ -376,13 +328,68 @@
                                 android:layout_marginTop="10dp"
                                 android:inputType="textCapSentences"
                                 android:textSize="13dp"
-                                android:hint="Nota"
+                                android:hint="Titulo del evento"
                                 android:layout_marginLeft="10dp"
                                 android:background="@drawable/border_negro_radius"
                                 android:layout_height="30dp"
                                 android:id="@+id/txtMotivoCita" />
                         </LinearLayout>
                     </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:weightSum="1"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="0.40"
+                            android:layout_marginRight="5dp"
+                            android:layout_height="wrap_content">
+                            <Button
+                                android:layout_width="match_parent"
+                                android:text="Mes/Día"
+                                android:gravity="center"
+                                android:textAllCaps="false"
+                                android:textSize="12dp"
+                                android:background="@drawable/border_negro_radius"
+                                android:layout_height="30dp"
+                                android:id="@+id/btnMesDia" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="0.40"
+                            android:layout_marginLeft="5dp"
+                            android:layout_height="wrap_content">
+                            <Button
+                                android:layout_width="match_parent"
+                                android:text="Horario disponible"
+                                android:gravity="center"
+                                android:textAllCaps="false"
+                                android:textSize="12dp"
+                                android:background="@drawable/border_negro_radius"
+                                android:layout_height="30dp"
+                                android:id="@+id/btnHora" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:weightSum="1"
+                        android:gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="0.80"
+                            android:background="@color/negro"
+                            android:layout_height="1dp">
+                        </LinearLayout>
+                    </LinearLayout>
+                    <!--Termina Separador-->
+
+
 
                 </LinearLayout>
             </RelativeLayout>
@@ -413,7 +420,7 @@
                 android:text="Cancelar"
                 android:textColor="@color/gris_fuerte"
                 android:textAllCaps="false"
-                android:onClick="goCitas"
+                android:onClick="goEventos"
                 android:textSize="12dp"
                 android:background="@drawable/border_verde_radius"
                 android:layout_height="30dp" />

@@ -12,7 +12,7 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:id="@+id/logo_zungu"
+            android:id="@+id/logo"
             android:weightSum="1"
             android:gravity="center"
             android:layout_width="match_parent"
@@ -27,7 +27,7 @@
                 android:src="@drawable/titulo_registro"/>
 
         </LinearLayout>
-
+<!--
         <LinearLayout
             android:layout_below="@+id/logo_zungu"
             android:id="@+id/tx_registro"
@@ -49,10 +49,11 @@
                 android:textColor="@color/verde_claro"/>
 
         </LinearLayout>
+        -->
 
 
         <LinearLayout
-            android:layout_below="@+id/tx_registro"
+            android:layout_below="@+id/logo"
             android:id="@+id/input"
             android:weightSum="1"
             android:gravity="center"
@@ -322,7 +323,7 @@
                 android:text="@string/login_leyenda"/>
 
         </LinearLayout>
-
+<!--
         <LinearLayout
             android:layout_below="@+id/txt_leyenda"
             android:id="@+id/imagen_final"
@@ -341,6 +342,7 @@
                 />
 
         </LinearLayout>
+        -->
     </RelativeLayout>
 
 

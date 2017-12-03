@@ -65,7 +65,7 @@ tools:context="com.samemoon.app.Menu">
         android:weightSum="1"
         android:gravity="center"
         android:layout_height="wrap_content"
-        android:onClick="goHome">
+        android:onClick="goEventos">
         <LinearLayout
             android:layout_width="0dp"
             android:layout_weight="0.10"

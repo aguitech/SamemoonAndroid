@@ -4,6 +4,7 @@
     android:id="@+id/activity_login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blanco"
     tools:context="com.samemoon.app.Login">
 
     <RelativeLayout
@@ -27,30 +28,10 @@
 
         </LinearLayout>
 
+
+
         <LinearLayout
             android:layout_below="@+id/logo_zungu"
-            android:id="@+id/tx_registro"
-            android:weightSum="1"
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_marginTop="30dp"
-            android:layout_height="30dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.80"
-                android:text="INICIAR SESIÓN"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:textSize="20dp"
-                android:textColor="@color/verde_claro"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_below="@+id/tx_registro"
             android:id="@+id/correo"
             android:weightSum="1"
             android:gravity="center"
@@ -83,7 +64,7 @@
             android:weightSum="1"
             android:gravity="center"
             android:layout_width="match_parent"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="20dp"
             android:layout_height="40dp"
             android:orientation="horizontal">
 
@@ -107,11 +88,39 @@
 
         <LinearLayout
             android:layout_below="@+id/password"
+            android:id="@+id/olvide_password"
+            android:weightSum="1"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_marginTop="0dp"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/blanco"
+                android:src="@drawable/txt_olvidaste_contrasenia" />
+            <!--
+            <Button
+                android:layout_width="0dp"
+                android:text="Olvidé mi contraseña"
+                android:visibility="gone"
+                android:layout_height="match_parent"
+                android:textSize="13dp"
+                android:layout_weight="0.40"
+                android:textAllCaps="false"
+                android:background="?android:attr/selectableItemBackground"
+                />
+            -->
+        </LinearLayout>
+        <LinearLayout
+            android:layout_below="@+id/olvide_password"
             android:id="@+id/btn_registro"
             android:weightSum="1"
             android:gravity="center"
             android:layout_width="match_parent"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:layout_height="40dp"
             android:orientation="horizontal">
 
@@ -130,14 +139,23 @@
 
         <LinearLayout
             android:layout_below="@+id/btn_registro"
-            android:id="@+id/olvide_password"
+            android:id="@+id/no_tienes_cuenta"
             android:weightSum="1"
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_marginTop="0dp"
             android:layout_height="40dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            >
 
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/txt_registrate"
+                android:background="@color/blanco"
+                android:onClick="goRegistro"
+                />
+            <!--
             <Button
                 android:layout_width="0dp"
                 android:text="Olvidé mi contraseña"
@@ -148,8 +166,10 @@
                 android:textAllCaps="false"
                 android:background="?android:attr/selectableItemBackground"
                 />
+            -->
         </LinearLayout>
 
+        <!--
         <LinearLayout
             android:layout_below="@+id/olvide_password"
             android:id="@+id/separador"
@@ -184,7 +204,7 @@
                 android:layout_weight="0.43">
             </LinearLayout>
         </LinearLayout>
-
+-->
         <!--
         <LinearLayout
             android:layout_below="@+id/separador"

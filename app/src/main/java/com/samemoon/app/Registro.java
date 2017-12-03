@@ -70,7 +70,8 @@ public class Registro extends AppCompatActivity {
     }
 
     private void jsonRegistro(String usuario, String password, String nombre, String apellido){
-        String _url = "http://hyperion.init-code.com/zungu/app/registro.php";
+        //String _url = "http://hyperion.init-code.com/zungu/app/registro.php";
+        String _url = "http://aguitech.com/samemoon/cobradores/android_registro.php";
 
         AndroidNetworking.post(_url)
                 .addBodyParameter("correo", usuario)

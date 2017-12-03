@@ -316,8 +316,8 @@ public class Agregar_evento extends AppCompatActivity {
         startActivity(i);
     }
 
-    public void goCitas(View v){
-        Intent i = new Intent(Agregar_evento.this, Citas.class);
+    public void goEventos(View v){
+        Intent i = new Intent(Agregar_evento.this, Lista_eventos.class);
         startActivity(i);
     }
 
@@ -423,7 +423,8 @@ public class Agregar_evento extends AppCompatActivity {
                         btnGuardar.setEnabled(true);
                         //Descomentar
                         //Intent i = new Intent(Agregar_cita.this, Cita_generada_exitosamente.class);
-                        Intent i = new Intent(Agregar_evento.this, Cita_generada_exitosamente.class);
+                        //Intent i = new Intent(Agregar_evento.this, Cita_generada_exitosamente.class);
+                        Intent i = new Intent(Agregar_evento.this, Lista_eventos.class);
                         startActivity(i);
 
                         showMsg("Se ha agendado la cita");

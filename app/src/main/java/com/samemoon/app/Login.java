@@ -182,6 +182,12 @@ public class Login extends AppCompatActivity {
         Intent i = new Intent(Login.this, Registro.class);
         startActivity(i);
     }
+    public void crearCuenta(View v){
+        Intent i = new Intent(Login.this, Registro.class);
+        startActivity(i);
+    }
+
+
 
     public boolean isLoggedIn() {
         AccessToken accessToken = AccessToken.getCurrentAccessToken();

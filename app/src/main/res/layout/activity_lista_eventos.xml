@@ -4,8 +4,8 @@
     android:id="@+id/activity_notificaciones"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondokraken"
-    tools:context="com.samemoon.app.Lista_contratos">
+    tools:context="com.samemoon.app.Lista_eventos">
+    <!-- android:background="@drawable/fondokraken" -->
 
     <!--Comienza el contenedor padre-->
     <LinearLayout
@@ -70,72 +70,10 @@
                 -->
             </LinearLayout>
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:weightSum="1"
-            android:background="@color/azul_kraken"
-            android:layout_height="40dp">
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="0.10"
-                android:gravity="center"
-                android:layout_height="match_parent"></LinearLayout>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="0.80"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_height="match_parent">
-                <ImageView
-                    android:src="@drawable/veterinario"
-                    android:layout_width="30dp"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:text="Eventos"
-                    android:gravity="center"
-                    android:textColor="@color/blanco"
-                    android:textSize="15dp"
-                    android:paddingLeft="10dp"
-                    android:layout_height="match_parent" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="0.10"
-                android:gravity="center"
-                android:layout_height="match_parent">
-            </LinearLayout>
-        </LinearLayout>
         <!--Termina contenedor del header-->
 
         <!--Buscador-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:focusableInTouchMode="true"
-            android:layout_marginTop="15dp"
-            android:weightSum="1"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:layout_height="wrap_content">
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="0.90"
-                android:layout_height="40dp">
-                <EditText
-                    android:layout_width="match_parent"
-                    android:hint="Buscar"
-                    android:id="@+id/txtBuscador"
-                    android:textSize="12dp"
-                    android:background="@android:color/transparent"
-                    android:layout_height="match_parent"
-                    android:drawablePadding="@dimen/txtDrwblPadding"
-                    android:paddingLeft="10dp"
-                    android:drawableRight="@drawable/lupa"
-                    android:maxLines="1"
-                    android:inputType="textCapSentences"/>
-                />
-            </LinearLayout>
-        </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:weightSum="1"

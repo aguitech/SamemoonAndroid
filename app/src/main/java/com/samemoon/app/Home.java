@@ -61,8 +61,12 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         /*
         Intent para la siguiente version
-        */
         Intent i = new Intent(Home.this, Lista_contratos.class);
+        startActivity(i);
+        */
+        //Intent i = new Intent(Home.this, Lista_eventos.class);
+        //Intent i = new Intent(Home.this, Lista_contratos.class);
+        Intent i = new Intent(Home.this, Lista_eventos.class);
         startActivity(i);
 
         prefManager = new PrefManager(this);
