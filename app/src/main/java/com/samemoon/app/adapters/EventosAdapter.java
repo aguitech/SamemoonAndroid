@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.samemoon.app.Detalle_contrato;
+import com.samemoon.app.Detalle_evento;
 import com.samemoon.app.Lista_eventos;
 import com.samemoon.app.R;
 import com.squareup.picasso.Callback;
@@ -120,7 +121,8 @@ public class EventosAdapter extends BaseAdapter {
                 Log.d("click", _listaIdVeterinarios.get(i));
 
                 //Intent intent = new Intent(context, Detalle_cliente.class);
-                Intent intent = new Intent(context, Detalle_contrato.class);
+                //Intent intent = new Intent(context, Detalle_contrato.class);
+                Intent intent = new Intent(context, Detalle_evento.class);
                 //intent.putExtra("idveterinario", _listaIdVeterinarios.get(i));
                 //intent.putExtra("idcliente", _listaIdVeterinarios.get(i));
                 intent.putExtra("idcontrato", _listaIdVeterinarios.get(i));

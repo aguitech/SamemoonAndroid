@@ -83,7 +83,8 @@ public class Agregar_evento extends AppCompatActivity {
 
         btnGuardar.setEnabled(true);
 
-        _urlNotificaciones = "http://hyperion.init-code.com/zungu/app/vt_get_numero_notificaciones.php?idv=" + valueID;
+        //_urlNotificaciones = "http://hyperion.init-code.com/zungu/app/vt_get_numero_notificaciones.php?idv=" + valueID;
+        _urlNotificaciones = "http://aguitech.com/samemoon/cobradores/android_get_numero_notificaciones.php?id=" + valueID;
         new Agregar_evento.RetrieveFeedTaskNotificaciones().execute();
 
         df = new SimpleDateFormat("dd/MM/yyyy");

@@ -65,6 +65,8 @@
             android:screenOrientation="portrait"></activity>
         <activity android:name="com.samemoon.app.Agregar_evento"
             android:screenOrientation="portrait"></activity>
+        <activity android:name="com.samemoon.app.Detalle_evento"
+            android:screenOrientation="portrait"></activity>
 
     </application>
 
