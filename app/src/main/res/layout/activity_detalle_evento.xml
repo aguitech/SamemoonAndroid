@@ -278,7 +278,7 @@
                     android:text="Tomar foto"
                     android:textColor="@color/gris_fuerte"
                     android:textAllCaps="false"
-                    android:onClick="goTomarFoto"
+                    android:id="@+id/btnCapture"
                     android:textSize="12dp"
                     android:background="@drawable/border_verde_radius"
                     android:layout_height="30dp" />
