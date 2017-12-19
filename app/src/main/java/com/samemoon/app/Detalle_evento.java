@@ -79,10 +79,11 @@ public class Detalle_evento extends AppCompatActivity {
 
     String idString;
 
+    int TAKE_PHOTO_CODE = 1888;
 
     private ImageView imageView;
 
-    int TAKE_PHOTO_CODE = 0;
+    //int TAKE_PHOTO_CODE = 0;
     public static int count = 0;
 
 
@@ -90,6 +91,7 @@ public class Detalle_evento extends AppCompatActivity {
     private Button subirFoto;
     private ImageView verFoto;
     private  static final int TAKE_PICTURE=1;
+    private String bmpPhotoPath;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -182,6 +184,7 @@ public class Detalle_evento extends AppCompatActivity {
                 //startActivityForResult(cameraIntent, TAKE_PHOTO_CODE);
                 startActivityForResult(cameraIntent, TAKE_PHOTO_CODE);
 
+
             }
         });
         /**
@@ -209,8 +212,31 @@ public class Detalle_evento extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == TAKE_PHOTO_CODE && resultCode == RESULT_OK) {
+
             Log.d("CameraDemo", "Pic saved");
 
+            //Bitmap bitmap = (Bitmap) data.getExtras().get("data");
+
+
+            if(data != null)
+            {
+                showMsg("test 2");
+                Uri selectedImageUri = data.getData();
+                String filestring = selectedImageUri.getPath();
+
+                Bitmap bm = (Bitmap) data.getExtras().get("data");
+                Bitmap bmpPhoto = bm;
+                bmpPhotoPath = filestring;
+                imageView.setImageBitmap(bmpPhoto);
+                //removePhoto.setVisibility(View.VISIBLE);
+
+            }else{
+                showMsg("test 1");
+
+
+            }
+
+            /*
             Bitmap bitmap = (Bitmap) data.getExtras().get("data");
 			if (bitmap != null) {
 				//mImageView.setImageBitmap(bitmap);
@@ -223,6 +249,7 @@ public class Detalle_evento extends AppCompatActivity {
 					e.printStackTrace();
 				}
 			}
+			*/
 
             /*
             File imgFile = new  File("/storage/emulated/0/picFolder/1.jpg");
