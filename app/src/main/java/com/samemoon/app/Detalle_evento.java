@@ -1,10 +1,12 @@
 package com.samemoon.app;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.Matrix;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -12,11 +14,13 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -26,21 +30,27 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.samemoon.app.adapters.PagosAdapter;
+import com.samemoon.app.classes.Request;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
 import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLEncoder;
+import java.security.Principal;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by hectoraguilar on 07/03/17.
@@ -70,6 +80,8 @@ public class Detalle_evento extends AppCompatActivity {
     String idString;
 
 
+    private ImageView imageView;
+
     int TAKE_PHOTO_CODE = 0;
     public static int count = 0;
 
@@ -80,7 +92,8 @@ public class Detalle_evento extends AppCompatActivity {
 
         //lv = (ListView) findViewById(R.id.list_pagos);
 
-
+        //this.imageView = (ImageView)this.findViewById(R.id.imgFotoEvento);
+        this.imageView = (ImageView)this.findViewById(R.id.imgFotoEvento);
 
         showMsg("test");
 
@@ -114,10 +127,14 @@ public class Detalle_evento extends AppCompatActivity {
         */
         //_urlGet = "http://hyperion.init-code.com/zungu/app/vt_principal.php?id_editar=" + idString + "&idv=" + valueID + "&accion=true";
         //_urlGet = "http://thekrakensolutions.com/cobradores/android_get_cliente.php?id_editar=" + idString + "&idv=" + valueID + "&accion=true";
+
+
+        /** RECUPERAR INFORMACION Y RESULTADOS DEL EVENTO
+
         _urlGet = "http://thekrakensolutions.com/cobradores/android_get_contrato.php?id_editar=" + idString + "&idv=" + valueID + "&accion=true";
         new Detalle_evento.RetrieveFeedTaskGet().execute();
 
-
+         */
 
         if( ContextCompat.checkSelfPermission(this, android.Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -132,6 +149,8 @@ public class Detalle_evento extends AppCompatActivity {
         File newdir = new File(dir);
         newdir.mkdirs();
 
+        //this.imageView = (ImageView)this.findViewById(R.id.imgFotoEvento);
+        ImageView fotoSeleccionada = (ImageView) findViewById(R.id.imgFotoEvento);
         Button capture = (Button) findViewById(R.id.btnCapture);
         capture.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -153,8 +172,10 @@ public class Detalle_evento extends AppCompatActivity {
 
                 Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, outputFileUri);
-
+                //startActivityForResult(cameraIntent, REQUEST_IMAGE_CAPTURE);
+                //startActivityForResult(cameraIntent, TAKE_PHOTO_CODE);
                 startActivityForResult(cameraIntent, TAKE_PHOTO_CODE);
+
             }
         });
         /**
@@ -183,6 +204,79 @@ public class Detalle_evento extends AppCompatActivity {
 
         if (requestCode == TAKE_PHOTO_CODE && resultCode == RESULT_OK) {
             Log.d("CameraDemo", "Pic saved");
+
+            /*
+            File imgFile = new  File("/storage/emulated/0/picFolder/1.jpg");
+
+            if(imgFile.exists()){
+
+                Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
+
+                ImageView myImage = (ImageView) findViewById(R.id.imgFotoEvento);
+
+                myImage.setImageBitmap(myBitmap);
+
+            }
+            */
+            /*
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            imageView.setImageBitmap(imageBitmap);
+            */
+
+            /*
+            Bitmap photo = (Bitmap) data.getExtras().get("data");
+            imageView.setImageBitmap(photo);
+
+
+
+            data.getExtras().get("data");
+            Bitmap photo = (Bitmap) data.getExtras().get("data");
+            imageView.setImageBitmap(photo);
+            */
+
+            /*
+            Bitmap photo = (Bitmap) data.getExtras().get("data");
+            imageView.setImageBitmap(photo);
+            */
+            /*
+imgFotoEvento
+
+            Uri selectedImage = data.getData();
+            String[] filePathColumn = {MediaStore.Images.Media.DATA};
+
+            Cursor cursor = getContentResolver().query(selectedImage,
+                    filePathColumn, null, null, null);
+            cursor.moveToFirst();
+
+            int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+            String picturePath = cursor.getString(columnIndex);
+            cursor.close();
+
+            ImageView imageView = (ImageView) findViewById(R.id.imgFotoEvento);
+            imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
+            */
+        }
+    }
+    public void cambiarFoto(View v){
+        int MY_PERMISSIONS_REQUEST_READ_AND_WRITE_EXTERNAL_STORAGE = 1;
+
+        if((ContextCompat.checkSelfPermission(Detalle_evento.this,
+                Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)
+                || (ContextCompat.checkSelfPermission(Detalle_evento.this,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED))
+
+        {
+
+            ActivityCompat.requestPermissions
+                    (Detalle_evento.this, new String[]{
+                            Manifest.permission.READ_EXTERNAL_STORAGE,
+                            Manifest.permission.WRITE_EXTERNAL_STORAGE
+                    },MY_PERMISSIONS_REQUEST_READ_AND_WRITE_EXTERNAL_STORAGE);
+
+        } else {
+            Intent i = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+            startActivityForResult(i, 1);
         }
     }
     private void showMsg(CharSequence text){
@@ -348,7 +442,7 @@ public class Detalle_evento extends AppCompatActivity {
 
         protected String doInBackground(Void... urls) {
             try {
-                Log.i("INFO url: ", _url);
+                Log.i("INFO url: GUARDAR ", _url);
                 URL url = new URL(_url);
                 HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
                 try {
@@ -376,42 +470,35 @@ public class Detalle_evento extends AppCompatActivity {
                 response = "THERE WAS AN ERROR";
             } else {
                 try {
-                    JSONTokener tokener = new JSONTokener(response);
-                    JSONArray arr = new JSONArray(tokener);
+                    Context context = getApplicationContext();
+                    int duration = Toast.LENGTH_SHORT;
 
-                    listaNombreVeterinarios.clear();
-                    listaImagenVeterinarios.clear();
-                    listaIdVeterinario.clear();
-
-
-                    for (int i = 0; i < arr.length(); i++) {
-                        JSONObject jsonobject = arr.getJSONObject(i);
-
-                        /*
-                        listaNombreVeterinarios.add(jsonobject.getString("nombre"));
-                        listaImagenVeterinarios.add(jsonobject.getString("foto"));
-                        listaIdVeterinario.add(jsonobject.getString("id_veterinario"));
-                        */
-                        //listaImagenVeterinarios.add(jsonobject.getString("foto"));
-
-                        /*
-                        listaNombreVeterinarios.add(jsonobject.getString("numero_cliente") + " " + jsonobject.getString("nombre") + " " + jsonobject.getString("apaterno"));
-
-                        listaImagenVeterinarios.add(jsonobject.getString("imagen"));
-                        listaIdVeterinario.add(jsonobject.getString("id_cliente"));
-                        */
-                        listaNombreVeterinarios.add(jsonobject.getString("numero_contrato"));
-
-                        listaImagenVeterinarios.add(jsonobject.getString("cantidad"));
-                        //listaIdVeterinario.add(jsonobject.getString("total"));
-                        listaIdVeterinario.add(jsonobject.getString("id_contrato"));
-
-                    }
-
+                    showMsg("Se ha agregado la foto");
                     /*
-                    _mascotasAdapter = new PagosAdapter(valueID, mActivity, listaNombreVeterinarios, listaImagenVeterinarios, listaIdVeterinario);
-                    lv.setAdapter(_mascotasAdapter);
+                    showMsg("Se ha agregado la mascota");
+
+                    finish();
+
+                    EditText txtNombre = (EditText)findViewById(R.id.txtNombre);
+
+                    txtNombre.setText("");
                     */
+
+                    JSONObject object = null;
+                    try {
+                        object = (JSONObject) new JSONTokener(response).nextValue();
+                        int ID = object.getInt("id_evento");
+                        CharSequence text;
+
+
+                        if(ID > 0){
+
+                            uploadImage(ID);
+                        }
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
 
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -419,6 +506,92 @@ public class Detalle_evento extends AppCompatActivity {
             }
             Log.i("INFO", response);
         }
+    }
+
+    private String hashMapToUrl(HashMap<String, String> params) throws UnsupportedEncodingException {
+        StringBuilder result = new StringBuilder();
+        boolean first = true;
+        for(Map.Entry<String, String> entry : params.entrySet()){
+            if (first)
+                first = false;
+            else
+                result.append("&");
+
+            result.append(URLEncoder.encode(entry.getKey(), "UTF-8"));
+            result.append("=");
+            result.append(URLEncoder.encode(entry.getValue(), "UTF-8"));
+        }
+
+        return result.toString();
+    }
+    private class Upload extends AsyncTask<Void,Void,String>{
+        private Bitmap image;
+        private int ID;
+
+        public Upload(Bitmap image,int ID){
+            this.image = image;
+            this.ID = ID;
+        }
+
+        @Override
+        protected String doInBackground(Void... params) {
+            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+            image.compress(Bitmap.CompressFormat.JPEG,100,byteArrayOutputStream);
+
+            String encodeImage = Base64.encodeToString(byteArrayOutputStream.toByteArray(), Base64.DEFAULT);
+
+            HashMap<String,String> detail = new HashMap<>();
+            detail.put("id", Integer.toString(ID));
+            detail.put("image", encodeImage);
+
+            try{
+                String dataToSend = hashMapToUrl(detail);
+
+                //String response = Request.post("http://hyperion.init-code.com/zungu/saveImageAdopta.php",dataToSend);
+                //String response = Request.post("http://hyperion.init-code.com/zungu/saveImageAdopta.php",dataToSend);
+                String response = Request.post("http://aguitech.com/samemoon/cobradores/app_guardar_foto_android.php",dataToSend);
+                return response;
+
+            }catch (Exception e){
+                e.printStackTrace();
+                Log.e("ERROR","ERROR  "+e);
+                return null;
+            }
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            Toast.makeText(getApplicationContext(),"La mascota ha sido guardado correctamente",Toast.LENGTH_SHORT).show();
+
+            Intent i = new Intent(Detalle_evento.this, Principal.class);
+            startActivity(i);
+        }
+    }
+
+    public void guardarFotoServidor(View v){
+        //Intent i = new Intent(Detalle_contrato.this, Lista_clientes.class);
+
+        //_url = "http://hyperion.init-code.com/zungu/app/vt_agregar_mascota_adopcion.php?estado=" + URLEncoder.encode(valueEstado) + "&id_veterinario=" + String.valueOf(valueID);
+        _url = "http://aguitech.com/samemoon/cobradores/app_guardar_foto_android.php?id_usuario=" + String.valueOf(valueID);
+
+        new Detalle_evento.RetrieveFeedTask().execute();
+    }
+
+
+
+    public void uploadImage(int ID){
+        ImageView imageView = (ImageView) findViewById(R.id.imgFotoEvento);
+        int maxHeight = 600;
+        int maxWidth = 600;
+
+        Bitmap image = ((BitmapDrawable) imageView.getDrawable()).getBitmap();
+        float scale = Math.min(((float)maxHeight / image.getWidth()), ((float)maxWidth / image.getHeight()));
+
+        Matrix matrix = new Matrix();
+        matrix.postScale(scale, scale);
+
+        image = Bitmap.createBitmap(image, 0, 0, image.getWidth(), image.getHeight(), matrix, true);
+        new Upload(image, ID).execute();
     }
 
     /*

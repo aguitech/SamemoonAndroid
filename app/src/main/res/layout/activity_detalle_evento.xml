@@ -283,6 +283,47 @@
                     android:background="@drawable/border_verde_radius"
                     android:layout_height="30dp" />
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:layout_marginTop="15dp"
+                android:clipToPadding="false"
+                android:gravity="center"
+                android:paddingTop="0dp">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:text="Sincronizar"
+                    android:textColor="@color/gris_fuerte"
+                    android:textAllCaps="false"
+                    android:onClick="guardarFotoServidor"
+                    android:id="@+id/btnGuardarFoto"
+                    android:textSize="12dp"
+                    android:background="@drawable/border_verde_radius"
+                    android:layout_height="30dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:layout_marginTop="15dp"
+                android:clipToPadding="false"
+                android:gravity="center"
+                android:paddingTop="0dp">
+                <!-- android:onClick="cambiarFoto" -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:id="@+id/imgFotoEvento"
+                    android:onClick="cambiarFoto"
+                    android:src="@drawable/btn_facebook"
+                    android:layout_height="100dp" />
+            </LinearLayout>
+
 
         </LinearLayout>
 
