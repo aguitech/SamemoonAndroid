@@ -85,6 +85,12 @@ public class Detalle_evento extends AppCompatActivity {
     int TAKE_PHOTO_CODE = 0;
     public static int count = 0;
 
+
+    private Button tomarFoto;
+    private Button subirFoto;
+    private ImageView verFoto;
+    private  static final int TAKE_PICTURE=1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -205,6 +211,19 @@ public class Detalle_evento extends AppCompatActivity {
         if (requestCode == TAKE_PHOTO_CODE && resultCode == RESULT_OK) {
             Log.d("CameraDemo", "Pic saved");
 
+            Bitmap bitmap = (Bitmap) data.getExtras().get("data");
+			if (bitmap != null) {
+				//mImageView.setImageBitmap(bitmap);
+                imageView.setImageBitmap(bitmap);
+
+				try {
+					//sendPhoto(bitmap);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+
             /*
             File imgFile = new  File("/storage/emulated/0/picFolder/1.jpg");
 
@@ -279,6 +298,92 @@ imgFotoEvento
             startActivityForResult(i, 1);
         }
     }
+
+    /*
+    private void sendPhoto(Bitmap bitmap) throws Exception {
+        new UploadTask().execute(bitmap);
+    }
+
+
+    private class UploadTask extends AsyncTask<Bitmap, Void, Void> {
+
+        protected Void doInBackground(Bitmap... bitmaps) {
+            if (bitmaps[0] == null)
+                return null;
+            setProgress(0);
+
+            Bitmap bitmap = bitmaps[0];
+            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream); // convert Bitmap to ByteArrayOutputStream
+            InputStream in = new ByteArrayInputStream(stream.toByteArray()); // convert ByteArrayOutputStream to ByteArrayInputStream
+
+            DefaultHttpClient httpclient = new DefaultHttpClient();
+            try {
+                HttpPost httppost = new HttpPost(
+                        "http://192.168.8.84:8003/savetofile.php"); // server
+
+                MultipartEntity reqEntity = new MultipartEntity();
+                reqEntity.addPart("myFile",
+                        System.currentTimeMillis() + ".jpg", in);
+                httppost.setEntity(reqEntity);
+
+                //Log.i(TAG, "request " + httppost.getRequestLine());
+                HttpResponse response = null;
+                try {
+                    response = httpclient.execute(httppost);
+                } catch (ClientProtocolException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+                try {
+                    if (response != null)
+                        //Log.i(TAG, "response " + response.getStatusLine().toString());
+                } finally {
+
+                }
+            } finally {
+
+            }
+
+            if (in != null) {
+                try {
+                    in.close();
+                } catch (IOException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+
+            if (stream != null) {
+                try {
+                    stream.close();
+                } catch (IOException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+
+            return null;
+        }
+
+        @Override
+        protected void onProgressUpdate(Void... values) {
+            // TODO Auto-generated method stub
+            super.onProgressUpdate(values);
+        }
+
+        @Override
+        protected void onPostExecute(Void result) {
+            // TODO Auto-generated method stub
+            super.onPostExecute(result);
+            //Toast.makeText(Detalle_evento.this, R.string.uploaded, Toast.LENGTH_LONG).show();
+        }
+    }
+    */
+
     private void showMsg(CharSequence text){
         Context context = getApplicationContext();
         int duration = Toast.LENGTH_SHORT;
