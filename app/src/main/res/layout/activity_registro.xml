@@ -4,6 +4,7 @@
     android:id="@+id/activity_registro"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blanco"
     tools:context="com.samemoon.app.Registro">
 
 
@@ -69,7 +70,7 @@
                 android:maxLines="1"
                 android:id="@+id/txtNombre"
                 android:layout_height="match_parent"
-                android:layout_weight="0.50"
+                android:layout_weight=".8"
                 android:background="@drawable/border_input_radius"
                 android:inputType="text"
                 android:drawableLeft="@drawable/nombre"
@@ -77,6 +78,17 @@
                 android:ems="10"
                 android:paddingLeft="10dp"
                 />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_below="@+id/input"
+            android:id="@+id/input1"
+            android:weightSum="1"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
             <EditText
                 android:layout_width="0dp"
                 android:hint="Apellido"
@@ -84,20 +96,23 @@
                 android:maxLines="1"
                 android:id="@+id/txtApellido"
                 android:layout_height="match_parent"
-                android:layout_weight="0.50"
+                android:layout_weight=".8"
                 android:background="@drawable/border_input_radius"
                 android:inputType="text"
+                android:drawableLeft="@drawable/nombre"
+                android:drawablePadding="@dimen/txtDrwblPadding"
+                android:ems="10"
                 android:paddingLeft="10dp"
                 />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_below="@+id/input"
+            android:layout_below="@+id/input1"
             android:id="@+id/tx_registro_dos"
             android:weightSum="1"
             android:gravity="center"
             android:layout_width="match_parent"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="10dp"
             android:layout_height="40dp"
             android:orientation="horizontal">
 
@@ -108,7 +123,7 @@
                 android:maxLines="1"
                 android:id="@+id/txtEmail"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight=".8"
                 android:background="@drawable/border_input_radius"
                 android:inputType="textEmailAddress"
                 android:drawableLeft="@drawable/mail"
@@ -124,7 +139,7 @@
             android:weightSum="1"
             android:gravity="center"
             android:layout_width="match_parent"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="10dp"
             android:layout_height="40dp"
             android:orientation="horizontal">
 
@@ -135,7 +150,7 @@
                 android:maxLines="1"
                 android:id="@+id/txtPassword"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight=".8"
                 android:background="@drawable/border_input_radius"
                 android:inputType="textPassword"
                 android:drawableLeft="@drawable/lock"
@@ -151,7 +166,7 @@
             android:weightSum="1"
             android:gravity="center"
             android:layout_width="match_parent"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="10dp"
             android:layout_height="40dp"
             android:orientation="horizontal">
 
@@ -161,7 +176,7 @@
                 android:textSize="15dp"
                 android:maxLines="1"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight=".8"
                 android:id="@+id/txtPasswordDos"
                 android:background="@drawable/border_input_radius"
                 android:inputType="textPassword"
@@ -174,6 +189,23 @@
 
         <LinearLayout
             android:layout_below="@+id/tx_registro_cuatro"
+            android:id="@+id/btn_iniciar_sesion"
+            android:weightSum="1"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="¿Ya tienes cuenta? Inicia sesión"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_below="@+id/btn_iniciar_sesion"
             android:id="@+id/btn_registro"
             android:weightSum="1"
             android:gravity="center"
@@ -193,7 +225,26 @@
                 android:layout_weight="0.35"
                 />
         </LinearLayout>
+        <LinearLayout
+            android:layout_below="@+id/btn_registro"
+            android:id="@+id/btn_terminos_condiciones"
+            android:weightSum="1"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Al registrarte aceptas los términos y condiciones"
+                />
+        </LinearLayout>
+
+
+        <!--
         <LinearLayout
             android:layout_below="@+id/btn_registro"
             android:id="@+id/separador"
@@ -323,6 +374,7 @@
                 android:text="@string/login_leyenda"/>
 
         </LinearLayout>
+        -->
 <!--
         <LinearLayout
             android:layout_below="@+id/txt_leyenda"

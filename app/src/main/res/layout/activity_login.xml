@@ -47,7 +47,7 @@
                 android:hint="Correo electrónico"
                 android:id="@+id/txtEmail"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight=".8"
                 android:textSize="12dp"
                 android:background="@drawable/border_input_radius"
                 android:inputType="textEmailAddress"
@@ -76,7 +76,7 @@
                 android:text="1234"
                 android:textSize="12dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight=".8"
                 android:id="@+id/txtPassword"
                 android:background="@drawable/border_input_radius"
                 android:inputType="textPassword"
@@ -94,15 +94,17 @@
             android:weightSum="1"
             android:gravity="center"
             android:layout_width="match_parent"
-            android:layout_marginTop="0dp"
+            android:layout_marginTop="10dp"
             android:layout_height="40dp"
             android:orientation="horizontal">
 
-            <ImageButton
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/blanco"
-                android:src="@drawable/txt_olvidaste_contrasenia" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="0.8"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="¿Olvidaste tu contraseña?"
+                />
             <!--
             <Button
                 android:layout_width="0dp"
@@ -150,12 +152,11 @@
             android:orientation="horizontal"
             >
 
-            <ImageButton
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/txt_registrate"
-                android:background="@color/blanco"
-                android:onClick="goRegistro"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="¿No tienes cuenta? Registrate"
                 />
             <!--
             <Button
