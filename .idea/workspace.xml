@@ -67,13 +67,13 @@
       <file leaf-file-name="Detalle_evento.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/samemoon/app/Detalle_evento.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="223" column="18" lean-forward="false" selection-start-line="223" selection-start-column="18" selection-end-line="223" selection-end-column="18" />
+            <state relative-caret-position="140">
+              <caret line="705" column="26" lean-forward="true" selection-start-line="705" selection-start-column="26" selection-end-line="705" selection-end-column="26" />
               <folding>
-                <element signature="e#2118#2126#0" expanded="true" />
-                <element signature="e#2205#2213#0" expanded="true" />
-                <element signature="e#2287#2295#0" expanded="true" />
-                <element signature="e#5876#6880#0" expanded="true" />
+                <element signature="e#2086#2094#0" expanded="true" />
+                <element signature="e#2173#2181#0" expanded="true" />
+                <element signature="e#2255#2263#0" expanded="true" />
+                <element signature="e#5844#6880#0" expanded="true" />
                 <element signature="e#6879#6880#0" expanded="true" />
               </folding>
             </state>
@@ -175,12 +175,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>onclik</find>
-      <find>uploadImage</find>
-      <find>.php</find>
-      <find>app_guardar_foto</find>
-      <find>foto</find>
-      <find>imagevie</find>
       <find>imgFoto</find>
       <find>requestCode</find>
       <find>imageview</find>
@@ -194,9 +188,7 @@
       <find>dir</find>
       <find>img</find>
       <find>getImageFileName</find>
-      <find>upload</find>
       <find>get</find>
-      <find>RetrieveFeedTask</find>
       <find>params</find>
       <find>imgFotoEvento</find>
       <find>sendPhoto</find>
@@ -205,6 +197,14 @@
       <find>TAKE_PHOTO_CODE</find>
       <find>RESULT_OK</find>
       <find>ACTION_IMAGE_CAPTURE</find>
+      <find>count</find>
+      <find>outputfi</find>
+      <find>OUTPUT</find>
+      <find>RetrieveFeedTask</find>
+      <find>upload</find>
+      <find>se ha guarda</find>
+      <find>uploadImage</find>
+      <find>Upload</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -2317,7 +2317,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1513728197879" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1513731550160" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2365,7 +2365,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1513728197879" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1513731550161" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2548,7 +2548,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1513728197882" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1513731550168" />
       </method>
     </configuration>
     <list size="1">
@@ -3183,13 +3183,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/samemoon/app/Detalle_evento.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="223" column="18" lean-forward="false" selection-start-line="223" selection-start-column="18" selection-end-line="223" selection-end-column="18" />
+        <state relative-caret-position="140">
+          <caret line="705" column="26" lean-forward="true" selection-start-line="705" selection-start-column="26" selection-end-line="705" selection-end-column="26" />
           <folding>
-            <element signature="e#2118#2126#0" expanded="true" />
-            <element signature="e#2205#2213#0" expanded="true" />
-            <element signature="e#2287#2295#0" expanded="true" />
-            <element signature="e#5876#6880#0" expanded="true" />
+            <element signature="e#2086#2094#0" expanded="true" />
+            <element signature="e#2173#2181#0" expanded="true" />
+            <element signature="e#2255#2263#0" expanded="true" />
+            <element signature="e#5844#6880#0" expanded="true" />
             <element signature="e#6879#6880#0" expanded="true" />
           </folding>
         </state>

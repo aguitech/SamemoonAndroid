@@ -47,7 +47,6 @@ import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
-import java.security.Principal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -179,7 +178,10 @@ public class Detalle_evento extends AppCompatActivity {
                 Uri outputFileUri = Uri.fromFile(newfile);
 
                 Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, outputFileUri);
+
+                //GUARDA SD
+                //cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, outputFileUri);
+
                 //startActivityForResult(cameraIntent, REQUEST_IMAGE_CAPTURE);
                 //startActivityForResult(cameraIntent, TAKE_PHOTO_CODE);
                 startActivityForResult(cameraIntent, TAKE_PHOTO_CODE);
@@ -230,13 +232,8 @@ public class Detalle_evento extends AppCompatActivity {
             {
 
                 showMsg("test 2");
-                Uri selectedImageUri = data.getData();
-                String filestring = selectedImageUri.getPath();
-
-                Bitmap bm = (Bitmap) data.getExtras().get("data");
-                Bitmap bmpPhoto = bm;
-                bmpPhotoPath = filestring;
-                imageView.setImageBitmap(bmpPhoto);
+                Bitmap bitmap = (Bitmap) data.getExtras().get("data");
+                imageView.setImageBitmap(bitmap);
                 //removePhoto.setVisibility(View.VISIBLE);
 
             }else{
@@ -636,6 +633,7 @@ imgFotoEvento
                         if(ID > 0){
 
                             uploadImage(ID);
+                            showMsg("Todo va bien");
                         }
 
                     } catch (JSONException e) {
@@ -703,10 +701,12 @@ imgFotoEvento
 
         @Override
         protected void onPostExecute(String s) {
-            Toast.makeText(getApplicationContext(),"La mascota ha sido guardado correctamente",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),"La foto ha sido guardado correctamente",Toast.LENGTH_SHORT).show();
 
+            /* DESCOMENTAR
             Intent i = new Intent(Detalle_evento.this, Principal.class);
             startActivity(i);
+            */
         }
     }
 
@@ -731,6 +731,8 @@ imgFotoEvento
 
         Matrix matrix = new Matrix();
         matrix.postScale(scale, scale);
+
+        showMsg("continua bien");
 
         image = Bitmap.createBitmap(image, 0, 0, image.getWidth(), image.getHeight(), matrix, true);
         new Upload(image, ID).execute();
