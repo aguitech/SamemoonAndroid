@@ -218,8 +218,17 @@ public class Detalle_evento extends AppCompatActivity {
             //Bitmap bitmap = (Bitmap) data.getExtras().get("data");
 
 
+            /*
+            if(data.getExtras() != null){
+                showMsg("sx");
+            }else{
+                showMsg("sd");
+            }
+            */
+
             if(data != null)
             {
+
                 showMsg("test 2");
                 Uri selectedImageUri = data.getData();
                 String filestring = selectedImageUri.getPath();
@@ -232,6 +241,7 @@ public class Detalle_evento extends AppCompatActivity {
 
             }else{
                 showMsg("test 1");
+
 
 
             }
