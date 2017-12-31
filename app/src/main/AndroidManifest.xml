@@ -68,6 +68,9 @@
         <activity android:name="com.samemoon.app.Detalle_evento"
             android:screenOrientation="portrait"></activity>
 
+        <service
+            android:name=".NotificacionesService"
+            android:screenOrientation="portrait" />
     </application>
 
 

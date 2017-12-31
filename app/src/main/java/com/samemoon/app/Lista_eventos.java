@@ -52,6 +52,8 @@ public class Lista_eventos extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_eventos);
 
+        startService(new Intent(Lista_eventos.this, NotificacionesService.class));
+
         lv = (ListView) findViewById(R.id.list_veterinarios);
         buscador = (EditText) findViewById(R.id.txtBuscador);
 
