@@ -96,6 +96,7 @@ public class NotificacionesService extends Service {
 
 
 
+        /*
 
         // The service is being created
 
@@ -150,6 +151,7 @@ public class NotificacionesService extends Service {
         //notificationManager.notify(11, mNotification);
         notificationManager.notify(1, mNotification);
 
+        */
 
 
 
