@@ -390,7 +390,11 @@ public class NotificacionesService extends Service {
 
                         //Intent intent = new Intent("com.viralandroid.androidpushnotificationtutorial");
                         //Intent intent = new Intent("init_code.hyperion.zunguveterinarios");
-                        Intent intent = new Intent(context, Notificaciones.class);
+                        //Intent intent = new Intent(context, Notificaciones.class);
+                        Intent intent = new Intent(context, Detalle_evento.class);
+
+                        //intent.putExtra("id_evento", true);
+                        intent.putExtra("idevento", jsonobject.getString("id_evento"));
                         mPendingIntent = PendingIntent.getActivity(getApplicationContext(), 1, intent, 0);
                         //ORIGINAL CODE
                         //Notification.Builder mBuilder = new Notification.Builder(getApplicationContext());

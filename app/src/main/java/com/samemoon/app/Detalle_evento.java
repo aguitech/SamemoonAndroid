@@ -16,8 +16,6 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
-import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.util.Base64;
@@ -31,8 +29,6 @@ import android.widget.Toast;
 
 import com.samemoon.app.adapters.PagosAdapter;
 import com.samemoon.app.classes.Request;
-import com.squareup.picasso.Callback;
-import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -111,8 +107,9 @@ public class Detalle_evento extends AppCompatActivity {
 
         } else {
             //idString= extras.getString("idcliente");
-            idString= extras.getString("idcontrato");
-            Log.d("id_vet", idString);
+            idString= extras.getString("idevento");
+            Log.d("id_evento", idString);
+            showMsg(idString);
 
         }
 
@@ -137,11 +134,12 @@ public class Detalle_evento extends AppCompatActivity {
 
 
         /** RECUPERAR INFORMACION Y RESULTADOS DEL EVENTO
-
-        _urlGet = "http://thekrakensolutions.com/cobradores/android_get_contrato.php?id_editar=" + idString + "&idv=" + valueID + "&accion=true";
+         _urlGet = "http://thekrakensolutions.com/cobradores/android_get_contrato.php?id_editar=" + idString + "&idv=" + valueID + "&accion=true";
+         new Detalle_evento.RetrieveFeedTaskGet().execute();
+         */
+        _urlGet = "http://aguitech.com/samemoon/cobradores/ios_detalle_evento.php?idevento=" + idString + "&idv=" + valueID + "&accion=true";
         new Detalle_evento.RetrieveFeedTaskGet().execute();
 
-         */
 
         if( ContextCompat.checkSelfPermission(this, android.Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -468,6 +466,13 @@ imgFotoEvento
                 ImageView foto = (ImageView) findViewById(R.id.imgFoto);
                 */
 
+                TextView txtTitulo = (TextView) findViewById(R.id.txtTituloEvento);
+                TextView txtFecha = (TextView) findViewById(R.id.txtFechaEvento);
+                TextView txtHora = (TextView) findViewById(R.id.txtHoraEvento);
+                TextView txtDescripcion = (TextView) findViewById(R.id.txtDescripcionEvento);
+
+
+                /*
                 TextView lblNombreVo = (TextView) findViewById(R.id.txtNombreA);
                 TextView lblEmailVo = (TextView) findViewById(R.id.txtEmailA);
                 TextView lblCelVo = (TextView) findViewById(R.id.txtCelA);
@@ -475,12 +480,30 @@ imgFotoEvento
                 TextView txtDireccion = (TextView) findViewById(R.id.txtDireccion);
 
                 final ImageView fotoVeterinario = (ImageView) findViewById(R.id.imgVeterinario);
+                */
+
 
                 try {
 
                     JSONObject object = (JSONObject) new JSONTokener(response).nextValue();
 
 
+
+                    if(object.getString("evento").length() > 3) {
+                        txtTitulo.setText(object.getString("evento"));
+                    }
+                    if(object.getString("fecha").length() > 3) {
+                        txtFecha.setText(object.getString("fecha"));
+                    }
+                    if(object.getString("txtHora").length() > 3) {
+                        txtHora.setText(object.getString("txtHora"));
+                    }
+                    if(object.getString("descripcion").length() > 3) {
+                        txtDescripcion.setText(object.getString("descripcion"));
+                    }
+
+                    //showMsg(_telefono_vo);
+                    /*
                     String _nombre_vo = object.getString("numero_cliente") + " - " + object.getString("nombre") + " " + object.getString("apaterno") + " " + object.getString("amaterno");
 
                     //String _telefono_vo = object.getString("telefono_casa");
@@ -494,7 +517,7 @@ imgFotoEvento
 
                     showMsg(_email_vo);
                     //showMsg(_telefono_vo);
-
+*/
 
                     /*
                     {"id_cliente":"1","cliente":"","numero_cliente":"0","fecha_nacimiento":"0000-00-00","sexo":"mkl","imagen":"",":"klmkl","":"mkl","":"mklm","":"klm","":"klmkl","telefono_casa":"","telefono_celular":"","telefono_oficina":"","":"","":"","ocupacion":"","direccion_trabajo":"","nombre_pareja":"","ocupacion_pareja":"","telefono_pareja":"","complexion":"","estatura":"","tez":"","edad_rango":"","cabello":"","color_cabello":"","tipo_identificacion":"","numero_identificacion":"","nombre_referencia_1":"","direccion_referencia_1":"","telefono_referencia_1":"","parentesco_referencia_1":"","anios_conocerce_referencia_1":"","nombre_referencia_2":"","direccion_referencia_2":"","telefono_referencia_2":"","parentesco_referencia_2":"","anios_conocerce_referencia_2":"","maps_localizacion":"","imagen_plano_localizacion":"","fachada_casa":"","a_lado_casa":"","enfrente_casa":"","autorizacion_contratos":"","id_creador":"0","id_empresa":"0"}
@@ -510,11 +533,7 @@ imgFotoEvento
 
 
 
-                    if(_nombre_vo.length() > 3)
-                        lblNombreVo.setText(_nombre_vo);
 
-                    if(_email_vo.length() > 3)
-                        lblEmailVo.setText(_email_vo);
 
                     /*
                     if(_telefono_vo.length() > 3)
@@ -530,35 +549,6 @@ imgFotoEvento
                     //DIRECCION
                     //String txtDireccion_ = object.getString("calle") + " " + object.getString("numero_exterior") + " " + object.getString("numero_interior")  + " , Colonia " + object.getString("colonia")  + " , Delegación/Municipio " + object.getString("delegacion_municipio")  + " , Estado " + object.getString("estado")  + " , C.P. " + object.getString("codigo_postal")  + " , País " + object.getString("pais")  + " , entre calle " + object.getString("entre_calle")  + " y calle " + object.getString("y_calle")  + " " + object.getString("amaterno")  + " " + object.getString("amaterno")  + " " + object.getString("amaterno")  + " " + object.getString("amaterno")  + " " + object.getString("amaterno")  + " " + object.getString("amaterno")  + " " + object.getString("amaterno")  + " " + object.getString("amaterno")  + " " + object.getString("amaterno")  + " " + object.getString("amaterno")  + " " + object.getString("amaterno")  + " " + object.getString("amaterno")  + " " + object.getString("amaterno")  + " " + object.getString("amaterno")  + " " + object.getString("amaterno")  + " " + object.getString("amaterno")  + " " + object.getString("amaterno");
                     //String txtDireccion_ = object.getString("calle") + " " + object.getString("numero_exterior") + " " + object.getString("numero_interior")  + " , Colonia " + object.getString("colonia")  + " , Delegación/Municipio " + object.getString("delegacion_municipio")  + " , Estado " + object.getString("estado")  + " , C.P. " + object.getString("codigo_postal")  + " , País " + object.getString("pais")  + " , entre calle " + object.getString("entre_calle")  + " y calle " + object.getString("y_calle");
-                    String txtDireccion_ = object.getString("calle") + " " + object.getString("numero_exterior") + " " + object.getString("numero_interior")  + " , Colonia " + object.getString("colonia")  + " , Delegación/Municipio " + object.getString("poblacion")  + " , Estado " + object.getString("estado")  + " , C.P. " + object.getString("codigo_postal")  + " , País " + object.getString("pais");
-
-                    if(txtDireccion_.length() > 3)
-                        txtDireccion.setText(txtDireccion_);
-
-
-                    Log.d("INFO", _nombre_vo);
-
-
-                    if(_imagen_vo.length() > 3){
-                        String _urlFoto = "http://thekrakensolutions.com/administrativos/images/clientes/" + _imagen_vo;
-                        //Picasso.with(fotoVeterinario.getContext()).load(_urlFoto).fit().centerCrop().into(fotoVeterinario);
-
-                        Picasso.with(fotoVeterinario.getContext()).load(_urlFoto)
-                                .into(fotoVeterinario, new Callback() {
-                                    @Override
-                                    public void onSuccess() {
-                                        Bitmap imageBitmap = ((BitmapDrawable) fotoVeterinario.getDrawable()).getBitmap();
-                                        RoundedBitmapDrawable circularBitmapDrawable =
-                                                RoundedBitmapDrawableFactory.create(fotoVeterinario.getContext().getResources(), imageBitmap);
-                                        circularBitmapDrawable.setCircular(true);
-                                        fotoVeterinario.setImageDrawable(circularBitmapDrawable);
-                                    }
-                                    @Override
-                                    public void onError() {
-
-                                    }
-                                });
-                    }
 
 
 

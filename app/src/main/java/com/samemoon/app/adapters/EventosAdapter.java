@@ -125,7 +125,7 @@ public class EventosAdapter extends BaseAdapter {
                 Intent intent = new Intent(context, Detalle_evento.class);
                 //intent.putExtra("idveterinario", _listaIdVeterinarios.get(i));
                 //intent.putExtra("idcliente", _listaIdVeterinarios.get(i));
-                intent.putExtra("idcontrato", _listaIdVeterinarios.get(i));
+                intent.putExtra("idevento", _listaIdVeterinarios.get(i));
                 context.startActivity(intent);
 
             }
