@@ -176,6 +176,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/txtFechaEvento"
+                        android:gravity="center"
                         android:text="Fecha" />
                 </LinearLayout>
                 <LinearLayout
@@ -186,10 +187,13 @@
                     android:onClick="goMenu">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/txtHoraEvento"
-                        android:text="Hora" />
+                        android:background="@drawable/border_hora_radius"
+                        android:gravity="center"
+                        android:text="Hora"
+                        android:textColor="@color/blanco"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="0dp"
@@ -211,7 +215,7 @@
                     android:orientation="vertical"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.10"
+                    android:layout_weight="0.20"
                     android:layout_marginLeft="0dp">
 
                 </LinearLayout>
@@ -219,7 +223,7 @@
                     android:orientation="vertical"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.80"
+                    android:layout_weight="0.60"
 
                     android:layout_marginLeft="0dp">
                     <TextView
@@ -238,101 +242,6 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_marginTop="20dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:layout_width="85dp"
-                    android:layout_height="85dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/cliente_perfil"
-                    android:id="@+id/imgVeterinario" />
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginLeft="20dp">
-                    <TextView
-                        android:id="@+id/txtNombreA"
-                        android:textSize="12dp"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Nombre de cliente"/>
-
-                    <LinearLayout
-                        android:layout_marginTop="10dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="15dp"
-                        android:orientation="horizontal">
-                        <ImageView
-                            android:layout_width="10dp"
-                            android:layout_height="10dp"
-                            android:layout_marginTop="2dp"
-                            android:src="@drawable/emailico"/>
-                        <TextView
-                            android:layout_marginLeft="10dp"
-                            android:id="@+id/txtEmailA"
-                            android:textSize="10dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="usuario@email.com"/>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_marginTop="1dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="15dp"
-                        android:orientation="horizontal">
-                        <ImageView
-                            android:layout_width="10dp"
-                            android:layout_height="10dp"
-                            android:layout_marginTop="2dp"
-                            android:src="@drawable/celico"/>
-                        <TextView
-                            android:layout_marginLeft="10dp"
-                            android:id="@+id/txtCelA"
-                            android:textSize="10dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="00 00 00 00 00"/>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_marginTop="1dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="15dp"
-                        android:orientation="horizontal">
-                        <ImageView
-                            android:layout_width="10dp"
-                            android:layout_height="10dp"
-                            android:layout_marginTop="2dp"
-                            android:src="@drawable/cedulaico"/>
-
-                    </LinearLayout>
-                </LinearLayout>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp"
-                android:layout_marginTop="15dp"
-                android:clipToPadding="false"
-                android:gravity="center"
-                android:paddingTop="0dp">
-
-                <TextView
-                    android:layout_marginLeft="10dp"
-                    android:id="@+id/txtDireccion"
-                    android:textSize="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="XX == XX == XX"/>
-            </LinearLayout>
             <!--
             <LinearLayout
                 android:layout_width="match_parent"

@@ -495,11 +495,13 @@ imgFotoEvento
                     if(object.getString("fecha").length() > 3) {
                         txtFecha.setText(object.getString("fecha"));
                     }
-                    if(object.getString("txtHora").length() > 3) {
-                        txtHora.setText(object.getString("txtHora"));
+                    if(object.getString("hora").length() > 3) {
+                        txtHora.setText(object.getString("hora"));
                     }
                     if(object.getString("descripcion").length() > 3) {
                         txtDescripcion.setText(object.getString("descripcion"));
+                    }else{
+                        txtDescripcion.setText("");
                     }
 
                     //showMsg(_telefono_vo);
@@ -673,12 +675,16 @@ imgFotoEvento
             HashMap<String,String> detail = new HashMap<>();
             detail.put("id", Integer.toString(ID));
             detail.put("image", encodeImage);
+            //idevento=" + idString
+            //detail.put("idevento", idString);
+
 
             try{
                 String dataToSend = hashMapToUrl(detail);
 
                 //String response = Request.post("http://hyperion.init-code.com/zungu/saveImageAdopta.php",dataToSend);
                 //String response = Request.post("http://hyperion.init-code.com/zungu/saveImageAdopta.php",dataToSend);
+                //idevento=" + idString
                 String response = Request.post("http://aguitech.com/samemoon/cobradores/app_guardar_foto_android.php",dataToSend);
                 return response;
 
@@ -704,7 +710,7 @@ imgFotoEvento
         //Intent i = new Intent(Detalle_contrato.this, Lista_clientes.class);
 
         //_url = "http://hyperion.init-code.com/zungu/app/vt_agregar_mascota_adopcion.php?estado=" + URLEncoder.encode(valueEstado) + "&id_veterinario=" + String.valueOf(valueID);
-        _url = "http://aguitech.com/samemoon/cobradores/app_guardar_foto_android.php?id_usuario=" + String.valueOf(valueID);
+        _url = "http://aguitech.com/samemoon/cobradores/app_guardar_foto_android.php?id_usuario=" + String.valueOf(valueID) + "&idevento=" + idString;
 
         new Detalle_evento.RetrieveFeedTask().execute();
     }

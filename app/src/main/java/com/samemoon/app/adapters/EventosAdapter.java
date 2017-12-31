@@ -2,26 +2,17 @@ package com.samemoon.app.adapters;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.AsyncTask;
-import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
-import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.samemoon.app.Detalle_contrato;
 import com.samemoon.app.Detalle_evento;
 import com.samemoon.app.Lista_eventos;
 import com.samemoon.app.R;
-import com.squareup.picasso.Callback;
-import com.squareup.picasso.Picasso;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -35,9 +26,13 @@ import java.util.ArrayList;
 
 public class EventosAdapter extends BaseAdapter {
 
-    ArrayList<String> _listaNombreVeterinarios;
-    ArrayList<String> _listaImagenVeterinarios;
-    ArrayList<String> _listaIdVeterinarios;
+
+
+    //_mascotasAdapter = new EventosAdapter(valueID, mActivity, listaTituloEvento, listaFechaEvento, listaHoraEvento, listaIdEvento);
+    ArrayList<String> _listaTituloEvento;
+    ArrayList<String> _listaFechaEvento;
+    ArrayList<String> _listaHoraEvento;
+    ArrayList<String> _listaIdEvento;
     Context context;
     public String _url;
     public String _urlGo;
@@ -45,10 +40,11 @@ public class EventosAdapter extends BaseAdapter {
 
     private static LayoutInflater inflater=null;
 
-    public EventosAdapter(int valueID, Lista_eventos mainActivity, ArrayList<String> listaNombreVeterinarios, ArrayList<String> listaImagenVeterinarios, ArrayList<String> listaIdVeterinarios){
-        _listaIdVeterinarios = listaIdVeterinarios;
-        _listaImagenVeterinarios = listaImagenVeterinarios;
-        _listaNombreVeterinarios = listaNombreVeterinarios;
+    public EventosAdapter(int valueID, Lista_eventos mainActivity, ArrayList<String> listaTituloEvento, ArrayList<String> listaFechaEvento, ArrayList<String> listaHoraEvento, ArrayList<String> listaIdEvento){
+        _listaIdEvento = listaIdEvento;
+        _listaTituloEvento = listaTituloEvento;
+        _listaFechaEvento = listaFechaEvento;
+        _listaHoraEvento = listaHoraEvento;
         _valueID = valueID;
 
         context = mainActivity;
@@ -57,7 +53,7 @@ public class EventosAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return _listaIdVeterinarios.size();
+        return _listaIdEvento.size();
     }
 
     @Override
@@ -71,10 +67,10 @@ public class EventosAdapter extends BaseAdapter {
     }
 
     public class Holder{
-        TextView nombreVeterinario;
-        ImageView imagenVeterinario;
-        Button agregarVeterinario;
-        ImageView detalleVeterinario;
+        TextView evento;
+        TextView fecha;
+        TextView hora;
+
     }
 
     @Override
@@ -82,14 +78,19 @@ public class EventosAdapter extends BaseAdapter {
 
         final Holder holder = new Holder();
         final View rowView;
-        rowView = inflater.inflate(R.layout.list_contratos, null);
+        rowView = inflater.inflate(R.layout.list_eventos, null);
         final int pos = i;
 
-        holder.nombreVeterinario = (TextView) rowView.findViewById(R.id.txtNombreVeterinario);
-        holder.imagenVeterinario = (ImageView) rowView.findViewById(R.id.imgVeterinario);
-        //holder.agregarVeterinario = (Button) rowView.findViewById(R.id.buttonAgregar);
-        holder.detalleVeterinario = (ImageView) rowView.findViewById(R.id.imgDetalle);
 
+
+        holder.evento = (TextView) rowView.findViewById(R.id.txtEvento);
+        holder.fecha = (TextView) rowView.findViewById(R.id.fecha);
+        holder.hora = (TextView) rowView.findViewById(R.id.hora);
+
+
+        holder.evento.setText(_listaTituloEvento.get(i));
+        holder.fecha.setText(_listaFechaEvento.get(i));
+        holder.hora.setText(_listaHoraEvento.get(i));
         /*
 
         holder.agregarVeterinario.setOnClickListener(new View.OnClickListener(){
@@ -118,19 +119,20 @@ public class EventosAdapter extends BaseAdapter {
                 //context.startActivity(intent);
 
                 Log.d("click", String.valueOf(i));
-                Log.d("click", _listaIdVeterinarios.get(i));
+                Log.d("click", _listaIdEvento.get(i));
 
                 //Intent intent = new Intent(context, Detalle_cliente.class);
                 //Intent intent = new Intent(context, Detalle_contrato.class);
                 Intent intent = new Intent(context, Detalle_evento.class);
                 //intent.putExtra("idveterinario", _listaIdVeterinarios.get(i));
                 //intent.putExtra("idcliente", _listaIdVeterinarios.get(i));
-                intent.putExtra("idevento", _listaIdVeterinarios.get(i));
+                intent.putExtra("idevento", _listaIdEvento.get(i));
                 context.startActivity(intent);
 
             }
         });
 
+        /*
         holder.detalleVeterinario.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 //_urlGo = "http://hyperion.init-code.com/zungu/app/vt_agregar_id_veterinario.php?idu=" + Integer.toString(_valueID) + "&idv=" + _listaIdVeterinarios.get(pos);
@@ -180,6 +182,7 @@ public class EventosAdapter extends BaseAdapter {
                     }
                 });
 
+        */
         return rowView;
     }
 

@@ -42,6 +42,11 @@ public class Lista_eventos extends AppCompatActivity {
     public static ArrayList<String> listaImagenVeterinarios = new ArrayList<String>();
     public static ArrayList<String> listaIdVeterinario = new ArrayList<String>();
 
+    public static ArrayList<String> listaTituloEvento = new ArrayList<String>();
+    public static ArrayList<String> listaFechaEvento = new ArrayList<String>();
+    public static ArrayList<String> listaHoraEvento = new ArrayList<String>();
+    public static ArrayList<String> listaIdEvento = new ArrayList<String>();
+
     public Lista_eventos mActivity = this;
     public EventosAdapter _mascotasAdapter;
 
@@ -184,6 +189,12 @@ public class Lista_eventos extends AppCompatActivity {
                     listaIdVeterinario.clear();
 
 
+                    listaTituloEvento.clear();
+                    listaFechaEvento.clear();
+                    listaHoraEvento.clear();
+                    listaIdEvento.clear();
+
+
                     for (int i = 0; i < arr.length(); i++) {
                         JSONObject jsonobject = arr.getJSONObject(i);
 
@@ -207,9 +218,15 @@ public class Lista_eventos extends AppCompatActivity {
                         //listaIdVeterinario.add(jsonobject.getString("total"));
                         listaIdVeterinario.add(jsonobject.getString("id_evento"));
 
+                        listaTituloEvento.add(jsonobject.getString("evento"));
+                        listaFechaEvento.add(jsonobject.getString("fecha"));
+                        listaHoraEvento.add(jsonobject.getString("hora"));
+                        listaIdEvento.add(jsonobject.getString("id_evento"));
+
                     }
 
-                    _mascotasAdapter = new EventosAdapter(valueID, mActivity, listaNombreVeterinarios, listaImagenVeterinarios, listaIdVeterinario);
+                    //_mascotasAdapter = new EventosAdapter(valueID, mActivity, listaNombreVeterinarios, listaImagenVeterinarios, listaIdVeterinario);
+                    _mascotasAdapter = new EventosAdapter(valueID, mActivity, listaTituloEvento, listaFechaEvento, listaHoraEvento, listaIdEvento);
                     lv.setAdapter(_mascotasAdapter);
 
                 } catch (Exception e) {
