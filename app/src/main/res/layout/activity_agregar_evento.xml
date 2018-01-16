@@ -271,56 +271,8 @@
                         <LinearLayout
                             android:layout_width="0dp"
                             android:orientation="vertical"
-                            android:layout_weight="0.90"
+                            android:layout_weight="0.80"
                             android:layout_height="wrap_content">
-                            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-                                android:layout_width="fill_parent"
-                                android:weightSum="1"
-                                android:visibility="gone"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical">
-
-                                <RadioButton android:id="@+id/revicion"
-                                    android:layout_width="wrap_content"
-                                    android:textColor="@color/gris_fuerte"
-                                    android:textSize="12dp"
-                                    android:layout_height="wrap_content"
-                                    android:text="Revisión Mensual"
-                                    />
-
-                                <RadioButton android:id="@+id/sevicio"
-                                    android:layout_width="wrap_content"
-                                    android:textSize="12dp"
-                                    android:textColor="@color/gris_fuerte"
-                                    android:layout_height="wrap_content"
-                                    android:text="Servicio de Estética"
-                                    />
-
-                                <RadioButton android:id="@+id/vacunacion"
-                                    android:layout_width="wrap_content"
-                                    android:textSize="12dp"
-                                    android:textColor="@color/gris_fuerte"
-                                    android:layout_height="wrap_content"
-                                    android:text="Vacunación"
-                                    />
-
-                                <RadioButton android:id="@+id/cirugia"
-                                    android:layout_width="wrap_content"
-                                    android:textSize="12dp"
-                                    android:textColor="@color/gris_fuerte"
-                                    android:layout_height="wrap_content"
-                                    android:text="Cirugía mayor"
-                                    />
-
-                                <RadioButton android:id="@+id/otro"
-                                    android:layout_width="wrap_content"
-                                    android:textSize="12dp"
-                                    android:textColor="@color/gris_fuerte"
-                                    android:layout_height="wrap_content"
-                                    android:text="Otro"
-                                    />
-                            </RadioGroup>
-
                             <EditText
                                 android:layout_width="match_parent"
                                 android:layout_marginRight="10dp"
@@ -333,6 +285,30 @@
                                 android:background="@drawable/border_negro_radius"
                                 android:layout_height="30dp"
                                 android:id="@+id/txtMotivoCita" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:weightSum="1"
+                        android:gravity="center"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:orientation="vertical"
+                            android:layout_weight="0.80"
+                            android:layout_height="wrap_content">
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_marginRight="10dp"
+                                android:paddingLeft="10dp"
+                                android:layout_marginTop="10dp"
+                                android:inputType="textCapSentences"
+                                android:textSize="13dp"
+                                android:hint="Descripción del evento"
+                                android:layout_marginLeft="10dp"
+                                android:background="@drawable/border_negro_radius"
+                                android:layout_height="30dp"
+                                android:id="@+id/txtDescripcion" />
                         </LinearLayout>
                     </LinearLayout>
                     <LinearLayout

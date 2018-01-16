@@ -335,6 +335,7 @@ public class Agregar_evento extends AppCompatActivity {
 
     public void confirmar(View v){
         EditText txtMotivoCita = (EditText)findViewById(R.id.txtMotivoCita);
+        EditText txtDescripcion = (EditText)findViewById(R.id.txtDescripcion);
 
         sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
         int valueID = sharedpreferences.getInt("idu", 0);
@@ -369,7 +370,8 @@ public class Agregar_evento extends AppCompatActivity {
 
 
             //_url = "http://hyperion.init-code.com/zungu/app/vt_agregar_cita.php?id_usuario=" + Integer.toString(selCliente) + "&idvh=" + Integer.toString(selVeterinario) + "&id_servicio=" + Integer.toString(selServicio) + "&motivo="+ URLEncoder.encode(txtMotivoCita.getText().toString()) + "&fecha=" + URLEncoder.encode(btnMesDia.getText().toString()) + "&hora=" + URLEncoder.encode(btnHora.getText().toString()) + "&id_veterinario=" + String.valueOf(valueID) + "&id_mascota=" + Integer.toString(selMascota);
-            _url = "http://aguitech.com/samemoon/cobradores/ios_agregar_evento.php?evento="+ URLEncoder.encode(txtMotivoCita.getText().toString()) + "&fecha=" + URLEncoder.encode(btnMesDia.getText().toString()) + "&hora=" + URLEncoder.encode(btnHora.getText().toString()) + "&id_usuario=" + String.valueOf(valueID);
+            //_url = "http://aguitech.com/samemoon/cobradores/android_agregar_evento.php?evento="+ URLEncoder.encode(txtMotivoCita.getText().toString()) + "&fecha=" + URLEncoder.encode(btnMesDia.getText().toString()) + "&hora=" + URLEncoder.encode(btnHora.getText().toString()) + "&id_usuario=" + String.valueOf(valueID);
+            _url = "http://aguitech.com/samemoon/cobradores/android_agregar_evento.php?evento="+ URLEncoder.encode(txtMotivoCita.getText().toString()) + "&descripcion="+ URLEncoder.encode(txtDescripcion.getText().toString()) + "&fecha=" + URLEncoder.encode(btnMesDia.getText().toString()) + "&hora=" + URLEncoder.encode(btnHora.getText().toString()) + "&id_usuario=" + String.valueOf(valueID);
             btnGuardar.setEnabled(false);
             new Agregar_evento.RetrieveFeedTask().execute();
         }
