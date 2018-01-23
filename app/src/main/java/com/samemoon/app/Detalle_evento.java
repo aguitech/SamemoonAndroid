@@ -60,6 +60,7 @@ public class Detalle_evento extends AppCompatActivity {
     SharedPreferences sharedpreferences;
     public static final String MyPREFERENCES = "MyPrefs";
     private int valueID = 0;
+    private String codigoEvento = "";
 
     public static ArrayList<String> listaNombreVeterinarios = new ArrayList<String>();
     public static ArrayList<String> listaImagenVeterinarios = new ArrayList<String>();
@@ -508,6 +509,7 @@ imgFotoEvento
 
                     if(object.getString("evento").length() > 3) {
                         txtTitulo.setText(object.getString("evento"));
+                        codigoEvento = object.getString("id_evento");
                     }
                     if(object.getString("fecha").length() > 3) {
                         txtFecha.setText(object.getString("fecha"));
@@ -772,6 +774,15 @@ imgFotoEvento
     }
     */
 
+
+    public void compartirRedes(View v){
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        //intent.putExtra(Intent.EXTRA_TEXT, "El mejor blog de android http://javaheros.blogspot.pe/");
+        intent.putExtra(Intent.EXTRA_TEXT, "Descarga Samemoon, registrate y en la seccion 'Canjear Código' escribe: " + codigoEvento);
+        //intent.setPackage("com.facebook.katana");
+        startActivity(intent);
+    }
     public void goBack(View v){
         //Intent i = new Intent(Detalle_contrato.this, Lista_clientes.class);
         Intent i = new Intent(Detalle_evento.this, Lista_contratos.class);
