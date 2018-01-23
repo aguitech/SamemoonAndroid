@@ -162,6 +162,41 @@ tools:context="com.samemoon.app.Menu">
         </LinearLayout>
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:weightSum="1"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:onClick="goCanjearCodigo">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.10"
+            android:gravity="center"
+            android:layout_height="30dp">
+            <ImageView
+                android:layout_width="25dp"
+                android:src="@drawable/perfil"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.80"
+            android:gravity="center_vertical"
+            android:layout_height="30dp"
+            android:id="@+id/btnCanjearCodigo">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:text="Canjear Código"
+                android:textColor="@color/blanco"
+                android:textSize="18dp" />
+        </LinearLayout>
+    </LinearLayout>
+
     <!--
     <LinearLayout
         android:layout_width="match_parent"

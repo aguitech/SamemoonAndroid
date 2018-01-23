@@ -44,6 +44,12 @@ public class Menu extends AppCompatActivity {
         Intent i = new Intent(Menu.this, Lista_eventos.class);
         startActivity(i);
     }
+    public void goCanjearCodigo(View v){
+        //Intent i = new Intent(Menu.this, Lista_contratos.class);
+        Intent i = new Intent(Menu.this, Canjear_codigo.class);
+        startActivity(i);
+    }
+
     public void cerrarS(View v){
         Intent i = new Intent(Menu.this, Login.class);
         i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);

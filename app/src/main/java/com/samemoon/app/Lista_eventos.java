@@ -110,7 +110,8 @@ public class Lista_eventos extends AppCompatActivity {
         //_url = "http://thekrakensolutions.com/cobradores/android_get_clientes.php?id=" + Integer.toString(valueID);
         //DESCOMENTAR
         //_url = "http://thekrakensolutions.com/cobradores/android_get_contratos.php?id=" + Integer.toString(valueID);
-        _url = "http://aguitech.com/samemoon/cobradores/ios_eventos.php?id=" + Integer.toString(valueID);
+        //_url = "http://aguitech.com/samemoon/cobradores/ios_eventos.php?id=" + Integer.toString(valueID);
+        _url = "http://aguitech.com/samemoon/cobradores/android_eventos.php?id=" + Integer.toString(valueID);
         Log.d("url_contratos", _url);
         new Lista_eventos.RetrieveFeedTask().execute();
     }
