@@ -70,7 +70,6 @@
         <activity android:name="com.samemoon.app.Notificaciones"
             android:screenOrientation="portrait"></activity>
 
-
         <service
             android:name=".NotificacionesService"
             android:screenOrientation="portrait" />

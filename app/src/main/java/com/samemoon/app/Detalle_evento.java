@@ -675,6 +675,12 @@ imgFotoEvento
             HashMap<String,String> detail = new HashMap<>();
             detail.put("id", Integer.toString(ID));
             detail.put("image", encodeImage);
+            detail.put("id_usuario", String.valueOf(valueID));
+            detail.put("idevento", idString);
+            //_url = "http://aguitech.com/samemoon/cobradores/app_guardar_foto_android.php?id_usuario=" + String.valueOf(valueID) + "&idevento=" + idString;
+            //_url = "http://aguitech.com/samemoon/cobradores/app_guardar_foto_android.php?=" +  + "&=" + ;
+
+
             //idevento=" + idString
             //detail.put("idevento", idString);
 
