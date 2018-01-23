@@ -226,15 +226,16 @@
                     android:layout_weight="0.60"
 
                     android:layout_marginLeft="0dp">
+
                     <TextView
                         android:id="@+id/txtDescripcionEvento"
-                        android:textSize="12dp"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."/>
+                        android:text="Descripcion"
+                        android:textColor="@color/black"
+                        android:textSize="12dp"
+                        android:textStyle="bold" />
 
 
                 </LinearLayout>
@@ -262,6 +263,9 @@
 
             </LinearLayout>
             -->
+
+
+            <!--
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -294,12 +298,13 @@
                 android:gravity="center"
                 android:paddingTop="0dp">
 
+
                 <Button
                     android:layout_width="wrap_content"
                     android:text="Tomar foto"
                     android:textColor="@color/gris_fuerte"
                     android:textAllCaps="false"
-                    android:id="@+id/btnCapture"
+                    android:id="@+id/btnCapture2"
                     android:textSize="12dp"
                     android:background="@drawable/border_verde_radius"
                     android:layout_height="30dp" />
@@ -326,6 +331,9 @@
                     android:background="@drawable/border_verde_radius"
                     android:layout_height="30dp" />
             </LinearLayout>
+
+
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -336,7 +344,28 @@
                 android:clipToPadding="false"
                 android:gravity="center"
                 android:paddingTop="0dp">
-                <!-- android:onClick="cambiarFoto" -->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:id="@+id/imgFotoEvento"
+                android:onClick="cambiarFoto"
+                android:src="@drawable/btn_facebook"
+                android:layout_height="100dp" />
+        </LinearLayout>
+
+
+
+        Ocultamos la funcion de cambiar foto y seleccionar la foto de la galeria de fotos
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:layout_marginTop="15dp"
+                android:clipToPadding="false"
+                android:gravity="center"
+                android:paddingTop="0dp">
                 <ImageView
                     android:layout_width="match_parent"
                     android:id="@+id/imgFotoEvento"
@@ -344,53 +373,71 @@
                     android:src="@drawable/btn_facebook"
                     android:layout_height="100dp" />
             </LinearLayout>
+            -->
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:layout_marginTop="15dp"
+                android:clipToPadding="false"
+                android:gravity="center"
+                android:paddingTop="0dp">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:id="@+id/imgFotoEvento"
+                    android:src="@drawable/btn_facebook"
+                    android:layout_height="170dp" />
+            </LinearLayout>
 
         </LinearLayout>
 
     </ScrollView>
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="@color/fondo_input"
-        android:paddingTop="10dp"
-        android:layout_alignParentBottom="true"
-        android:id="@+id/footer"
-        android:visibility="gone">
+        android:weightSum="1"
+        android:gravity="bottom"
+        android:layout_height="match_parent">
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:weightSum="1"
-            android:orientation="horizontal">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_weight=".25"
-                android:layout_height="40dp"
-                android:onClick="goClientes"
-                android:layout_gravity="center_vertical"
-                android:src="@drawable/clientes"/>
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_weight=".25"
-                android:layout_height="40dp"
-                android:onClick="goMascotas"
-                android:layout_gravity="center_vertical"
-                android:src="@drawable/mascotass"/>
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_weight=".25"
-                android:layout_height="40dp"
-                android:onClick="goServicio"
-                android:layout_gravity="center_vertical"
-                android:src="@drawable/servicios_dos"/>
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_weight=".25"
-                android:onClick="goTienda"
-                android:layout_height="40dp"
-                android:layout_gravity="center_vertical"
-                android:src="@drawable/tienda"/>
+            android:layout_width="0dp"
+            android:layout_weight="0.32"
+            android:layout_height="wrap_content">
+
         </LinearLayout>
-    </RelativeLayout>
+        <!-- Btn Tomar Foto -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.36"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnCapture"
+            android:visibility="gone">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/btn_menu_inferior"/>
+        </LinearLayout>
+        <!-- Btn Sincronizar Foto -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.36"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnSincronizarFoto"
+            android:onClick="guardarFotoServidor"
+            android:visibility="gone">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/btn_listo"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+
+
+
 </RelativeLayout>

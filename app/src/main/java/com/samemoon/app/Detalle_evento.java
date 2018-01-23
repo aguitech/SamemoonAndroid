@@ -23,6 +23,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -137,7 +138,7 @@ public class Detalle_evento extends AppCompatActivity {
          _urlGet = "http://thekrakensolutions.com/cobradores/android_get_contrato.php?id_editar=" + idString + "&idv=" + valueID + "&accion=true";
          new Detalle_evento.RetrieveFeedTaskGet().execute();
          */
-        _urlGet = "http://aguitech.com/samemoon/cobradores/ios_detalle_evento.php?idevento=" + idString + "&idv=" + valueID + "&accion=true";
+        _urlGet = "http://aguitech.com/samemoon/cobradores/ios_detalle_evento.php?idevento=" + idString + "&idusuario=" + valueID + "&accion=true";
         new Detalle_evento.RetrieveFeedTaskGet().execute();
 
 
@@ -156,7 +157,8 @@ public class Detalle_evento extends AppCompatActivity {
 
         //this.imageView = (ImageView)this.findViewById(R.id.imgFotoEvento);
         ImageView fotoSeleccionada = (ImageView) findViewById(R.id.imgFotoEvento);
-        Button capture = (Button) findViewById(R.id.btnCapture);
+        //Button capture = (Button) findViewById(R.id.btnCapture);
+        LinearLayout capture = (LinearLayout) findViewById(R.id.btnCapture);
         capture.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
@@ -234,8 +236,22 @@ public class Detalle_evento extends AppCompatActivity {
                 imageView.setImageBitmap(bitmap);
                 //removePhoto.setVisibility(View.VISIBLE);
 
+
+                LinearLayout btnCapture = (LinearLayout) findViewById(R.id.btnCapture);
+                btnCapture.setVisibility(View.GONE);
+
+                LinearLayout btnSincronizarFoto = (LinearLayout) findViewById(R.id.btnSincronizarFoto);
+                btnSincronizarFoto.setVisibility(View.VISIBLE);
+
             }else{
                 showMsg("test 1");
+
+
+                LinearLayout btnSincronizarFoto = (LinearLayout) findViewById(R.id.btnSincronizarFoto);
+                btnSincronizarFoto.setVisibility(View.GONE);
+
+                LinearLayout btnCapture = (LinearLayout) findViewById(R.id.btnCapture);
+                btnCapture.setVisibility(View.VISIBLE);
 
 
 
@@ -471,6 +487,7 @@ imgFotoEvento
                 TextView txtHora = (TextView) findViewById(R.id.txtHoraEvento);
                 TextView txtDescripcion = (TextView) findViewById(R.id.txtDescripcionEvento);
 
+                LinearLayout btnCapture = (LinearLayout) findViewById(R.id.btnCapture);
 
                 /*
                 TextView lblNombreVo = (TextView) findViewById(R.id.txtNombreA);
@@ -503,6 +520,14 @@ imgFotoEvento
                     }else{
                         txtDescripcion.setText("");
                     }
+
+                    if(object.getString("autorizacion_foto").equals("0")){
+                        btnCapture.setVisibility(View.VISIBLE);
+                    }else{
+                        btnCapture.setVisibility(View.GONE);
+                    }
+
+
 
                     //showMsg(_telefono_vo);
                     /*
