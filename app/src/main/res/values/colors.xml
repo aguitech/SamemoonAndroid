@@ -18,6 +18,8 @@
     <!--SAMEMOON-->
 
     <color name="fondo_menu">#86608F</color>
+    <color name="color_menu">#05d6d0</color>
+
     <color name="texto_input">#DCDCDC</color>
     <color name="morado">#541784</color>
 
