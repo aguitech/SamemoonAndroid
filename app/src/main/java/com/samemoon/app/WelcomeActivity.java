@@ -56,9 +56,9 @@ public class WelcomeActivity extends AppCompatActivity {
         // add few more layouts if you want
         layouts = new int[]{
                 R.layout.home_slide1,
-                R.layout.home_slide1,
-                R.layout.home_slide1,
-                R.layout.home_slide1};
+                R.layout.home_slide2,
+                R.layout.home_slide3,
+                R.layout.home_slide4};
 
 
         /*
