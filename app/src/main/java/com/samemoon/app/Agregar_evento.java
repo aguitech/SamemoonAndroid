@@ -79,9 +79,9 @@ public class Agregar_evento extends AppCompatActivity {
 
         sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
         valueID = sharedpreferences.getInt("idu", 0);
-        btnGuardar = (Button) findViewById(R.id.btnGuardar);
+        //btnGuardar = (Button) findViewById(R.id.btnGuardar);
 
-        btnGuardar.setEnabled(true);
+        //btnGuardar.setEnabled(true);
 
         //_urlNotificaciones = "http://hyperion.init-code.com/zungu/app/vt_get_numero_notificaciones.php?idv=" + valueID;
         _urlNotificaciones = "http://aguitech.com/samemoon/cobradores/android_get_numero_notificaciones.php?id=" + valueID;
@@ -372,7 +372,7 @@ public class Agregar_evento extends AppCompatActivity {
             //_url = "http://hyperion.init-code.com/zungu/app/vt_agregar_cita.php?id_usuario=" + Integer.toString(selCliente) + "&idvh=" + Integer.toString(selVeterinario) + "&id_servicio=" + Integer.toString(selServicio) + "&motivo="+ URLEncoder.encode(txtMotivoCita.getText().toString()) + "&fecha=" + URLEncoder.encode(btnMesDia.getText().toString()) + "&hora=" + URLEncoder.encode(btnHora.getText().toString()) + "&id_veterinario=" + String.valueOf(valueID) + "&id_mascota=" + Integer.toString(selMascota);
             //_url = "http://aguitech.com/samemoon/cobradores/android_agregar_evento.php?evento="+ URLEncoder.encode(txtMotivoCita.getText().toString()) + "&fecha=" + URLEncoder.encode(btnMesDia.getText().toString()) + "&hora=" + URLEncoder.encode(btnHora.getText().toString()) + "&id_usuario=" + String.valueOf(valueID);
             _url = "http://aguitech.com/samemoon/cobradores/android_agregar_evento.php?evento="+ URLEncoder.encode(txtMotivoCita.getText().toString()) + "&descripcion="+ URLEncoder.encode(txtDescripcion.getText().toString()) + "&fecha=" + URLEncoder.encode(btnMesDia.getText().toString()) + "&hora=" + URLEncoder.encode(btnHora.getText().toString()) + "&id_usuario=" + String.valueOf(valueID);
-            btnGuardar.setEnabled(false);
+            //btnGuardar.setEnabled(false);
             new Agregar_evento.RetrieveFeedTask().execute();
         }
         /*
@@ -442,13 +442,13 @@ public class Agregar_evento extends AppCompatActivity {
                     //String NOMBRE = object.getString("nombre");
                     //CharSequence text;
 
-                    btnGuardar.setEnabled(true);
+                    //btnListo.setEnabled(true);
                     if(ID == 0){
-                        btnGuardar.setEnabled(true);
+                        //btnListo.setEnabled(true);
                         showMsg("Por favor, ingrese otra fecha u hora.");
                         createSimpleDialog();
                     } else {
-                        btnGuardar.setEnabled(true);
+                        //btnListo.setEnabled(true);
                         //Descomentar
                         //Intent i = new Intent(Agregar_cita.this, Cita_generada_exitosamente.class);
                         //Intent i = new Intent(Agregar_evento.this, Cita_generada_exitosamente.class);

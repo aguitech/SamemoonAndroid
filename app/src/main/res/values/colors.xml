@@ -60,10 +60,10 @@
 
     <!-- dots inactive colors -->
 
-    <color name="dot_dark_screen1">#ffffff</color>
-    <color name="dot_dark_screen2">#ffffff</color>
-    <color name="dot_dark_screen3">#ffffff</color>
-    <color name="dot_dark_screen4">#ffffff</color>
+    <color name="dot_dark_screen1">#05d6d0</color>
+    <color name="dot_dark_screen2">#05d6d0</color>
+    <color name="dot_dark_screen3">#05d6d0</color>
+    <color name="dot_dark_screen4">#05d6d0</color>
 
     <!-- dots active colors -->
 
